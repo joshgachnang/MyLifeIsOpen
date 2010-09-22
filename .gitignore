@@ -1,2 +1,3 @@
 *.pyc
 *~
+settings-production.py

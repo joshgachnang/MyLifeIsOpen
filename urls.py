@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
 
 # Uncomment the next two lines to enable the admin:
@@ -14,4 +15,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+)
+urlpatterns += patterns('webwork.views',
+    (r'^$', 'home'),
+    (r'^posts/(?P<page>\d+)/$', 'posts_page'),
+    (r'^about/$', 'about'),
+    (r'^new_post/$', 'new_post'),
+    
 )
