@@ -1,3 +1,17 @@
 For posts in post_list
 <p>post</p>
-like, like number, dislike, dislike number, comment, comment number
+like (l33t), like number, dislike(n00b), dislike number, comment, comment number
+
+<table>
+{% for post in posts %}
+  <tr>
+    <td>{{ post.content }}</td>
+  </tr>
+  <tr>
+    <td><p>Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %} on {{ post.created }}</p></td>
+    <td><p><a href="/like/{{ post.id }}/">Likes</a>: {{ post.likes }}</p></td>
+    <td><p><a href="/dislike/{{ post.id }}/">Dislikes</a>: {{ post.dislikes }}</p></td>
+    <td></td>
+  </tr>
+{% endfor %}
+</table>

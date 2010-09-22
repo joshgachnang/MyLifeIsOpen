@@ -7,15 +7,18 @@ from models import Post, PostForm
 from datetime import datetime
 
 def home(request):
-    return HttpResponseRedirect('/posts/1')
+    return HttpResponseRedirect('/home/1')
+    
 def about(request):
     return render_to_response('about.html')
+    
 def posts_page(request, page):
     minimum = (int(page) - 1) * settings.POSTS_PER_PAGE
     posts = Post.objects.order_by('created')[minimum:minimum + settings.POSTS_PER_PAGE]
     if len(posts) == 0:
         return HttpResponse("No posts..")
-    return render_to_response('post.html')
+    return render_to_response('post.html', {'posts': posts})
+    
 def new_post(request):
     #Return form for new Post
     if request.method == 'POST':
@@ -30,11 +33,12 @@ def new_post(request):
 	    post.owner = None
 	if form.is_valid():
 	    form.save()
+	# Need to pass a message like "Thanks for making the world a geekier place!"
+	return HttpResponseRedirect('/')
     else:
         form = PostForm()
     return render_to_response('new_post.html', {'form': form})
 
-    return HttpResponseNotFound()
 def new_comment(request, post):
     #Return new comment form, pass Post object
     return render_to_response('new_comment.html', {'post': post})

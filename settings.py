@@ -5,6 +5,11 @@
 POSTS_PER_PAGE = 25
 AKISMET_API_KEY = 'your-key-here'
 
+# These will rename the like and dislike buttons on each post/comment.
+RENAME_LIKE = 'l33t'
+RENAME_DISLIKE = 'n00b'
+
+# Standard Settings
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 

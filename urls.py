@@ -18,8 +18,11 @@ urlpatterns = patterns('',
 )
 urlpatterns += patterns('webwork.views',
     (r'^$', 'home'),
-    (r'^posts/(?P<page>\d+)/$', 'posts_page'),
+    (r'^home/(?P<page>\d+)/$', 'posts_page'),
     (r'^about/$', 'about'),
     (r'^new_post/$', 'new_post'),
-    
+    (r'^post/(?P<id>\d+)/$', 'single_post'),
+    (r'^like/(?P<id>\d+)/$', 'like_post'),
+    (r'^dislike/(?P<id>\d+)/$', 'dislike_post'),
+    (r'^comment/(?P<id>\d+)/$', 'comment_post'),
 )
