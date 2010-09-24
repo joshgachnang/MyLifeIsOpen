@@ -9,6 +9,15 @@ AKISMET_API_KEY = 'your-key-here'
 RENAME_LIKE = 'l33t'
 RENAME_DISLIKE = 'n00b'
 
+# For django-registration
+ACCOUNT_ACTIVATION_DAYS = 7
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'youremail@gmail.com'
+EMAIL_HOST_PASSWORD = 'yourpassword'
+EMAIL_PORT = 587
+
 # Standard Settings
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -106,4 +115,5 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'webwork',
+    'registration'
 )

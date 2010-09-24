@@ -15,10 +15,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
-    (r'^accounts/login/$', 'django.contrib.auth.views.login'),
-    (r'^accounts/logout/$', 'django.contrib.auth.views.logout'),
-    (r'^accounts/change_password/$', 'django.contrib.auth.views.password_change'),
-    (r'^accounts/change_password_done/$', 'django.contrib.auth.views.password_change'),
+    (r'^accounts/', include('registration.backends.default.urls')),
 )
 urlpatterns += patterns('webwork.views',
     (r'^$', 'home'),

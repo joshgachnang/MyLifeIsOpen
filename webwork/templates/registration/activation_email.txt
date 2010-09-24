@@ -1,0 +1,10 @@
+Hey! You wanna activate right? Click this:
+
+<a href='http://mylifeisgeek.com/activate/{{ activation_key }}/'>http://mylifeisgeek.com/activate/{{ activation_key }}</a>
+
+Click it within {{ expiration_days }} days...or you have to do it all over..and that's no fun!
+
+Sincerely,
+
+Agent Pi
+My Life Is Geek Happy Registration Geek
