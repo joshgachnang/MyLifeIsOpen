@@ -2,6 +2,11 @@
   <head>
   </head>
   <body>
+    {% include "header.html" %}
+    {% include "userbar.html" %}
+    {% include "nav.html" %}
     {% block content %}{% endblock %}
+    {% include "sidebar.html" %}
+    {% include "footer.html" %}
   </body>
 </html>

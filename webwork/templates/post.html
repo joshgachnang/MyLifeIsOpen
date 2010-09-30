@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <table>
 {% for post in posts %}
   <tr>
@@ -7,7 +11,6 @@
     <td><p>Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %} on {{ post.created }}</p></td>
     <td><p><a href="/like/{{ post.id }}/">{{ like }}</a>: {{ post.likes }}</p></td>
     <td><p><a href="/dislike/{{ post.id }}/">{{ dislike }}</a>: {{ post.dislikes }}</p></td>
-    <td></td>
-  </tr>
-{% endfor %}
+  </tr>{% endfor %}
 </table>
+{% endblock %}

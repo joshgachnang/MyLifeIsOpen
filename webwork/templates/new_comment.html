@@ -1,3 +1,14 @@
+{% extends "base.html" %}
+
 {% load comments %}
 
-{% render_comment_form for post %}
+{% block content %}
+{% get_comment_form for post as form %}
+<form action="{% comment_form_target %}" method="post">
+  {{ form }}
+  <tr>
+    <td></td>
+    <td><input type="submit" name="preview" class="submit-post" value="Preview"></td>
+  </tr>
+</form>
+{% endblock %}

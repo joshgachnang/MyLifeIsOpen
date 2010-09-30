@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
 {% load comments %}
 
+{% block content %}
 {% render_comment_list for post %}
+{% endblock %}

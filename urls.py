@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
+from django.views.generic.simple import direct_to_template
+from django.contrib.auth.views import password_reset, password_reset_done, password_change, password_change_done, logout
+from django.http import HttpResponsePermanentRedirect
+
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -12,9 +16,10 @@ urlpatterns = patterns('',
     # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
     # to INSTALLED_APPS to enable admin documentation:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
+    (r'^accounts/profile/$', lambda request: HttpResponsePermanentRedirect('/home/1')),
+    url(r'^logout/$', 'django.contrib.auth.views.logout', {'next': '/'}, name="auth_logout"),
+    url(r'^logout/(?P<next_page>.*)/$', 'django.contrib.auth.views.logout', name='auth_logout_next'),
     (r'^accounts/', include('registration.backends.default.urls')),
 )
 urlpatterns += patterns('webwork.views',
@@ -25,7 +30,10 @@ urlpatterns += patterns('webwork.views',
     (r'^post/(?P<id>\d+)/$', 'single_post'),
     (r'^like/(?P<post_id>\d+)/$', 'like_post'),
     (r'^dislike/(?P<post_id>\d+)/$', 'dislike_post'),
-    (r'^comment/(?P<post_id>\d+)/$', 'comment_post'),
-    (r'^comment_like/(?P<post_id>\d+)/$', 'like_comment'),
-    (r'^comment_dislike/(?P<post_id>\d+)/$', 'dislike_comment'),
-)
+    (r'^comments/', include('django.contrib.comments.urls')),
+    (r'^comments/(?P<post_id>\d+)/$', 'show_comments'),
+    (r'^comments/(?P<post_id>\d+)/new/$', 'new_comment'),
+    (r'^comments/like/(?P<post_id>\d+)/$', 'like_comment'),
+    (r'^comments/dislike/(?P<post_id>\d+)/$', 'dislike_comment'),
+    # Sort by likes, geekiest, etc etc
+  )
