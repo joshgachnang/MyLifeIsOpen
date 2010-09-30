@@ -27,7 +27,7 @@ def posts_page(request, page):
 	dislike = settings.RENAME_DISLIKE
     else:
 	dislike = 'dislike'
-    return render_to_response('post.html', {'posts': posts, 'like': like, 'dislike': dislike, 'user': request.user})
+    return render_to_response('post.html', {'posts': posts, 'like': like, 'dislike': dislike, 'user': get_user(request)})
     
 def new_post(request):
     #Return form for new Post
@@ -37,10 +37,7 @@ def new_post(request):
         post.created = datetime.now()
         post.likes = 0
         post.dislikes = 0
-        if request.user.is_authenticated():
-	    post.owner = request.user
-	else:
-	    post.owner = None
+        post.owner = get_user(request)
 	if form.is_valid():
 	    form.save()
 	# Need to pass a message like "Thanks for making the world a geekier place!"
@@ -106,6 +103,12 @@ def like_dislike_comment(comment_id, like):
     a = Access(ip=ip, post_access=post)
     a.save()
     return 0 #Need to modify to anchor
+
+def get_user(request):
+    if request.user.is_authenticated:
+	return request.user
+    else:
+	return None
   
 def single_post(request):
     pass

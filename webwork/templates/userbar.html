@@ -1,10 +1,7 @@
 <div id="login">
-  {% ifequal user AnonymousUser %}
-    <p>Don't be a nameless geek! <a href="/accounts/login">Login!</a></p>
-    {{ user.username }}
-  {% else %}
-    <p>The current geek: {{ user.username }}. <a href="{% url auth_logout %}">Logout</a></p>
-    {{ user.username }}
-  {% endifequal %}
-  <p>The current geek: {{ user }} {{ user.username }}	.</p> 
+{% if user.is_authenticated %}
+  <p>The current geek is: {{ user.username }}. <a href="/accounts/login">Logout.</a></p>
+{% else %}
+  <p>Don't be a nameless geek! <a href="/accounts/login">Login!</a></p>
+{% endif %}
 </div>
