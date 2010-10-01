@@ -11,7 +11,7 @@ def home(request):
     return HttpResponseRedirect('/home/1')
     
 def about(request):
-    return render_to_response('about.html')
+    return render_to_response('about.html', {'user': get_user(request)})
     
 def posts_page(request, page):
     minimum = (int(page) - 1) * settings.POSTS_PER_PAGE
@@ -44,7 +44,7 @@ def new_post(request):
 	return HttpResponseRedirect('/')
     else:
         form = PostForm()
-    return render_to_response('new_post.html', {'form': form})
+    return render_to_response('new_post.html', {'form': form, 'user': get_user(request)})
 
 @login_required
 def new_comment(request, post_id):
