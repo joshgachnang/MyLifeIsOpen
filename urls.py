@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls.defaults import *
+from django.conf import settings
 from django.views.generic.simple import direct_to_template
 from django.contrib.auth.views import password_reset, password_reset_done, password_change, password_change_done, logout
 from django.http import HttpResponsePermanentRedirect
@@ -21,6 +22,8 @@ urlpatterns = patterns('',
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next': '/'}, name="auth_logout"),
     url(r'^logout/(?P<next_page>.*)/$', 'django.contrib.auth.views.logout', name='auth_logout_next'),
     (r'^accounts/', include('registration.backends.default.urls')),
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+	  {'document_root': settings.STATIC_DOC_ROOT}),
 )
 urlpatterns += patterns('webwork.views',
     (r'^$', 'home'),
@@ -36,4 +39,4 @@ urlpatterns += patterns('webwork.views',
     (r'^comments/like/(?P<post_id>\d+)/$', 'like_comment'),
     (r'^comments/dislike/(?P<post_id>\d+)/$', 'dislike_comment'),
     # Sort by likes, geekiest, etc etc
-  )
+)

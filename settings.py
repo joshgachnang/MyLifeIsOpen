@@ -19,6 +19,9 @@ EMAIL_HOST_PASSWORD = 'yourpassword'
 EMAIL_PORT = 587
 
 # Standard Settings
+import os
+dirname = os.path.dirname(globals()["__file__"])
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -64,7 +67,10 @@ USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = 'static/'
+MEDIA_ROOT = ''
+STATIC_DOC_ROOT = os.path.join(dirname, 'static/')
+
+
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -104,9 +110,6 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'MyLifeIsOpen.urls'
 
-import os
-dirname = os.path.dirname(globals()["__file__"])
-
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
@@ -126,5 +129,5 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'webwork',
-    'registration'
+    'registration',
 )

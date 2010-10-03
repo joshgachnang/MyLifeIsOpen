@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load comments %}
+
+{% block content %}
+
+{% get_comment_form for entry as form %}
+<!-- A context variable called form is created with the necessary hidden
+fields, timestamps and security hashes -->
+<table>
+  <form action="{% comment_form_target %}" method="post">
+    {{ form }}
+    <tr>
+      <td></td>
+      <td><input type="submit" name="preview" class="submit-post" value="Preview"></td>
+    </tr>
+  </form>
+</table>
+
+{% endblock %}

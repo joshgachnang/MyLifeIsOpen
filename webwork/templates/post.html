@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 
+{% load comments %}
+
 {% block content %}
 
-<table>
 {% for post in posts %}
-  <tr>
-    <td><a name={{ post.id }}>{{ post.content }}</a></td>
-  </tr>
-  <tr>
-    <td><p>Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %} on {{ post.created }}</p></td>
-    <td><p><a href="/like/{{ post.id }}/">{{ like }}</a>: {{ post.likes }}</p></td>
-    <td><p><a href="/dislike/{{ post.id }}/">{{ dislike }}</a>: {{ post.dislikes }}</p></td>
-  </tr>{% endfor %}
-</table>
+  {% get_comment_count for post as comment_count %}
+  <div class="triangle-border"><a name={{ post.id }}>{{ post.content }}</a>
+    <p>Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</p>
+  </div>
+  <table class="like-dislike">
+    <td class="like-dislike"><a href="/comments/{{ post.id }}/">Comments</a>: {{ comment_count }}</td>
+    <td class="like-dislike"><a href="/like/{{ post.id }}/">{{ like }}</a>: {{ post.likes }}</td>
+    <td class="like-dislike"><a href="/dislike/{{ post.id }}/">{{ dislike }}</a>: {{ post.dislikes }}</td>
+  </table>{% endfor %}
 {% endblock %}

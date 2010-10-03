@@ -1,16 +1,17 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css">
-    <link rel="stylesheet" type="text/css" href="css/yui-base.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/yui-base.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/post-bubble.css">
     
     
-  {% block head %}{% endblock %}
+    {% block head %}{% endblock %}
   </head>
   <body>
-    {% include "header.html" %}
     {% include "userbar.html" %}
+    {% include "header.html" %}
     {% include "nav.html" %}
-    {% block content %}{% endblock %}
+    <div id="content">{% block content %}{% endblock %}</div>
     {% include "sidebar.html" %}
     {% include "footer.html" %}
   </body>

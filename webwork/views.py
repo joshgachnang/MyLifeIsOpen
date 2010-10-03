@@ -50,12 +50,12 @@ def new_post(request):
 def new_comment(request, post_id):
     #Return new comment form, pass Post object
     post = Post.objects.get(id=post_id)
-    return render_to_response('new_comment.html', {'post': post})
+    return render_to_response('new_comment.html', {'post': post, 'user': get_user(request)})
     
 def show_comments(request, post_id):
     #Return list of comments, pass Post object
     post = Post.objects.get(id=post_id)
-    return render_to_response('comment_list.html', {'post': post})
+    return render_to_response('comment_list.html', {'post': post, 'user': get_user(request)})
     
 def like_post(request, post_id):
     like_dislike(request, post_id, True)
