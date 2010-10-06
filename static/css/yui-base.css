@@ -69,6 +69,22 @@ p,fieldset,table {
 	margin-bottom:1em;
 }
 
+a:link {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+a:active {
+  color: black;
+}
+a:hover {
+  text-decoration: underline;
+  color: black;
+}
+  
 /*Customizations*/
 #login {
   position: absolute; top: 5px; right: 5px;
@@ -91,7 +107,7 @@ p,fieldset,table {
   padding-bottom: 10px;
 } 
 table.like-dislike {
-  margin-left: 180px;
+  margin-left: 90px;
   border: 0px;
 }
 td.like-dislike {
@@ -114,4 +130,13 @@ td.like-dislike {
 }
 #geek {
   color: blue;
+}
+#tagline {
+  margin-left: 80px;
+  font-size: 60%;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+#nav a {
+  text-decoration: underline;
 }

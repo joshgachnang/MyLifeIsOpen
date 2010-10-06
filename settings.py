@@ -18,6 +18,7 @@ EMAIL_HOST_USER = 'youremail@gmail.com'
 EMAIL_HOST_PASSWORD = 'yourpassword'
 EMAIL_PORT = 587
 
+SITE_TITLE = 'My Life Is Geek'
 # Standard Settings
 import os
 dirname = os.path.dirname(globals()["__file__"])
