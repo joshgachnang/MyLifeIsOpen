@@ -1,6 +1,6 @@
 <div id="login">
 {% if user.is_authenticated %}
-  <p>The current geek is: {{ user.username }}. <a href="/accounts/login">Logout.</a></p>
+  <p>The current geek is: {{ user.username }}. <a href="{% url auth_logout %}">Logout.</a></p>
 {% else %}
   <p>Don't be a nameless geek! <a href="/accounts/login">Login!</a></p>
 {% endif %}
