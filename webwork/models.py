@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.comments.signals import comment_was_posted
 from django.forms import ModelForm, Textarea
 
+
 class Post(models.Model):
     content = models.CharField("How geeky is your life?", max_length=1000)
     owner = models.ForeignKey(User, blank=True, null=True)

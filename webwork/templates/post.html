@@ -5,6 +5,7 @@
 {% block content %}
 
 {% for post in posts %}
+  {{ time }}
   {% get_comment_count for post as comment_count %}
   <div class="triangle-border"><a name={{ post.id }}>{{ post.content }}</a>
     <p>Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</p>

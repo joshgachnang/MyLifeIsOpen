@@ -4,8 +4,8 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, HttpRequest
 from django.conf import settings
 from models import Post, PostForm, Access
-from datetime import datetime
 from django.contrib.auth.decorators import login_required
+import time, datetime
 
 def home(request):
     return HttpResponseRedirect('/home/1')
@@ -18,7 +18,7 @@ def posts_page(request, page):
     posts = Post.objects.order_by('created')[minimum:minimum + settings.POSTS_PER_PAGE]
     if len(posts) == 0:
         return HttpResponse("No posts..")
-    return render_to_response('post.html', {'posts': posts, 'like': settings.RENAME_LIKE_DISLIKE[0], 'dislike': settings.RENAME_LIKE_DISLIKE[1], 'user': get_user(request)})
+    return render_to_response('post.html', {'posts': posts, 'like': settings.RENAME_LIKE_DISLIKE[0], 'dislike': settings.RENAME_LIKE_DISLIKE[1], 'user': get_user(request), 'time': getStarDate()})
     
 def new_post(request):
     #Return form for new Post
@@ -101,6 +101,8 @@ def get_user(request):
 	return None
     else:
 	return request.user
-  
+def getStarDate():
+    stardate = str(time.localtime().tm_year) + '.' + str(time.localtime().tm_yday)
+    return "The current StarDate is %s" % stardate
 def single_post(request):
     pass
