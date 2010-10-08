@@ -3,5 +3,6 @@
   <p>The current geek is: {{ user.username }}. <a href="{% url auth_logout %}"><u>Logout.</u></a></p>
 {% else %}
   <p>Don't be a nameless geek! <a href="/accounts/login"><u>Login!</u></a></p>
+  <p>Want to be l33t too? <a href='/account/register'><u>Register</u></a></p>
 {% endif %}
 </div>
