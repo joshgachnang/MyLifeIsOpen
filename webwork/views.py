@@ -105,10 +105,11 @@ def like_dislike_comment(comment_id, like):
     return 0 #Need to modify to anchor
 
 def get_user(request):
-    if request.user.is_authenticated:
-	return request.user
-    else:
+    if request.user.is_anonymous:
+	print "anon"
 	return None
+    else:
+	return request.user
   
 def single_post(request):
     pass

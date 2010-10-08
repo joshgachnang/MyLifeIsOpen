@@ -1,7 +1,7 @@
 <div id="login">
 {% if user.is_authenticated %}
-  <p>The current geek is: {{ user.username }}. <a href="{% url auth_logout %}">Logout.</a></p>
+  <p>The current geek is: {{ user.username }}. <a href="{% url auth_logout %}"><u>Logout.</u></a></p>
 {% else %}
-  <p>Don't be a nameless geek! <a href="/accounts/login">Login!</a></p>
+  <p>Don't be a nameless geek! <a href="/accounts/login"><u>Login!</u></a></p>
 {% endif %}
 </div>

@@ -7,4 +7,4 @@ Click it within {{ expiration_days }} days...or you have to do it all over..and 
 Sincerely,
 
 Agent Pi
-My Life Is Geek Happy Registration Geek
+MyLifeIsGeek Registration Robot v3.1.4
