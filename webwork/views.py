@@ -19,7 +19,7 @@ def posts_page(request, page):
     posts = Post.objects.order_by('created')[minimum:minimum + settings.POSTS_PER_PAGE]
     if len(posts) == 0:
         return HttpResponseRedirect('/new_post/')
-    return render_to_response('post.html', {'posts': posts}, context_instance=RequestContext(request))
+    return render_to_response('post.html', {'posts': posts}, RequestContext(request))
     
 def new_post(request):
     #Return form for new Post
@@ -36,18 +36,18 @@ def new_post(request):
 	return HttpResponseRedirect('/')
     else:
         form = PostForm()
-    return render_to_response('new_post.html', {'form': form}, context_instance=RequestContext(request))
+    return render_to_response('new_post.html', {'form': form}, RequestContext(request))
 
 @login_required
 def new_comment(request, post_id):
     #Return new comment form, pass Post object
     post = Post.objects.get(id=post_id)
-    return render_to_response('new_comment.html', {'post': post}, context_instance=RequestContext(request))
+    return render_to_response('new_comment.html', {'post': post}, RequestContext(request))
     
 def show_comments(request, post_id):
     #Return list of comments, pass Post object
     post = Post.objects.get(id=post_id)
-    return render_to_response('comment_list.html', {'post': post}, context_instance=RequestContext(request))
+    return render_to_response('comment_list.html', {'post': post}, RequestContext(request))
     
 def like_post(request, post_id):
     like_dislike(request, post_id, True)
