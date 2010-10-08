@@ -140,3 +140,6 @@ td.like-dislike {
 #nav a {
   text-decoration: underline;
 }
+.user_time {
+  font-size: 65%;
+}

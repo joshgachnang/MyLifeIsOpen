@@ -18,16 +18,7 @@ def posts_page(request, page):
     posts = Post.objects.order_by('created')[minimum:minimum + settings.POSTS_PER_PAGE]
     if len(posts) == 0:
         return HttpResponse("No posts..")
-    if settings.RENAME_LIKE:
-	print settings.RENAME_LIKE
-	like = settings.RENAME_LIKE
-    else:
-	like = 'like'
-    if settings.RENAME_DISLIKE:
-	dislike = settings.RENAME_DISLIKE
-    else:
-	dislike = 'dislike'
-    return render_to_response('post.html', {'posts': posts, 'like': like, 'dislike': dislike, 'user': get_user(request)})
+    return render_to_response('post.html', {'posts': posts, 'like': settings.RENAME_LIKE_DISLIKE[0], 'dislike': settings.RENAME_LIKE_DISLIKE[1], 'user': get_user(request)})
     
 def new_post(request):
     #Return form for new Post
@@ -55,7 +46,7 @@ def new_comment(request, post_id):
 def show_comments(request, post_id):
     #Return list of comments, pass Post object
     post = Post.objects.get(id=post_id)
-    return render_to_response('comment_list.html', {'post': post, 'user': get_user(request)})
+    return render_to_response('comment_list.html', {'post': post, 'like': settings.RENAME_LIKE_DISLIKE[0], 'dislike': settings.RENAME_LIKE_DISLIKE[1], 'user': get_user(request)})
     
 def like_post(request, post_id):
     like_dislike(request, post_id, True)
@@ -67,6 +58,7 @@ def dislike_post(request, post_id):
     
 def like_comment(request, comment_id):
     pass
+  
 def dislike_comment(request, comment_id):
     pass
   
@@ -106,7 +98,6 @@ def like_dislike_comment(comment_id, like):
 
 def get_user(request):
     if request.user.is_anonymous:
-	print "anon"
 	return None
     else:
 	return request.user

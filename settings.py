@@ -9,6 +9,7 @@ AKISMET_API_KEY = 'your-key-here'
 RENAME_LIKE = 'l33t'
 RENAME_DISLIKE = 'n00b'
 
+RENAME_LIKE_DISLIKE = 'l33t', 'n00b'
 # For django-registration
 ACCOUNT_ACTIVATION_DAYS = 7
 
