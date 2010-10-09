@@ -6,6 +6,7 @@ from django.conf import settings
 from models import Post, PostForm, Access
 from django.contrib.auth.decorators import login_required
 import time, datetime
+from django.template import RequestContext
 
 def home(request):
     return HttpResponseRedirect('/home/1')
@@ -17,8 +18,8 @@ def posts_page(request, page):
     minimum = (int(page) - 1) * settings.POSTS_PER_PAGE
     posts = Post.objects.order_by('created')[minimum:minimum + settings.POSTS_PER_PAGE]
     if len(posts) == 0:
-        return HttpResponse("No posts..")
-    return render_to_response('post.html', {'posts': posts, 'like': settings.RENAME_LIKE_DISLIKE[0], 'dislike': settings.RENAME_LIKE_DISLIKE[1], 'user': get_user(request), 'time': getStarDate()})
+        return HttpResponseRedirect('/new_post/')
+    return render_to_response('post.html', {'posts': posts}, RequestContext(request))
     
 def new_post(request):
     #Return form for new Post
@@ -35,18 +36,18 @@ def new_post(request):
 	return HttpResponseRedirect('/')
     else:
         form = PostForm()
-    return render_to_response('new_post.html', {'form': form, 'user': get_user(request)})
+    return render_to_response('new_post.html', {'form': form}, RequestContext(request))
 
 @login_required
 def new_comment(request, post_id):
     #Return new comment form, pass Post object
     post = Post.objects.get(id=post_id)
-    return render_to_response('new_comment.html', {'post': post, 'user': get_user(request)})
+    return render_to_response('new_comment.html', {'post': post}, RequestContext(request))
     
 def show_comments(request, post_id):
     #Return list of comments, pass Post object
     post = Post.objects.get(id=post_id)
-    return render_to_response('comment_list.html', {'post': post, 'like': settings.RENAME_LIKE_DISLIKE[0], 'dislike': settings.RENAME_LIKE_DISLIKE[1], 'user': get_user(request)})
+    return render_to_response('comment_list.html', {'post': post}, RequestContext(request))
     
 def like_post(request, post_id):
     like_dislike(request, post_id, True)

@@ -6,10 +6,8 @@ POSTS_PER_PAGE = 25
 AKISMET_API_KEY = 'your-key-here'
 
 # These will rename the like and dislike buttons on each post/comment.
-RENAME_LIKE = 'l33t'
-RENAME_DISLIKE = 'n00b'
-
 RENAME_LIKE_DISLIKE = 'l33t', 'n00b'
+
 # For django-registration
 ACCOUNT_ACTIVATION_DAYS = 7
 
@@ -20,6 +18,9 @@ EMAIL_HOST_PASSWORD = 'yourpassword'
 EMAIL_PORT = 587
 
 SITE_TITLE = 'My Life Is Geek'
+
+GOOGLE_ANALYTICS_KEY='ua-0000000-0'
+
 # Standard Settings
 import os
 dirname = os.path.dirname(globals()["__file__"])
@@ -99,7 +100,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
-    "django.contrib.messages.context_processors.messages"
+    "django.contrib.messages.context_processors.messages",
+    "context_processors.mlio_settings",
 )
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -123,6 +125,7 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.humanize',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',

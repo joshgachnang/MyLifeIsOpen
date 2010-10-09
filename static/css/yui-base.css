@@ -68,6 +68,7 @@ p,fieldset,table {
 	/*so things don't run into each other*/
 	margin-bottom:1em;
 }
+/* Start Custom CSS */
 
 a:link {
   text-decoration: none;
@@ -85,12 +86,13 @@ a:hover {
   color: black;
 }
   
-/*Customizations*/
 #login {
   position: absolute; top: 5px; right: 5px;
   float: right;
-  margin: 0px;
-  padding: 0px;
+  margin-right: 15px;
+}
+#login p {
+  margin: 0px; 
 }
 #float a p {
   margin: 0px;
@@ -128,18 +130,31 @@ td.like-dislike {
 #header {
   color: red;
 }
+#header p {
+  margin: 0px;
+}
+#header h1 {
+  margin-bottom: 0px; 
+}
+#header br {
+  line-height: 20%; 
+}
+#header img {
+  float: left;
+  margin: 4px;
+}
 #geek {
   color: blue;
 }
 #tagline {
   margin-left: 80px;
-  font-size: 60%;
+  font-size: 75%;
   margin-top: 0px;
   padding-top: 0px;
 }
 #nav a {
   text-decoration: underline;
 }
-.user_time {
-  font-size: 65%;
+.post_user {
+  font-size: 75%;
 }
