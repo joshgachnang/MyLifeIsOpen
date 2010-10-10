@@ -171,6 +171,9 @@ td.like-dislike {
   -khtml-border-radius:  4em 1em 4em 1em;
   -moz-border-radius: 4em 0em 0em 0em;  
   border-radius: 0em 0em 0em 3em;
+  -webkit-box-shadow: 5px 5px 5px #777;
+  -moz-box-shadow: 5px 5px 5px #777; 
+  box-shadow: 5px 5px 5px #777; 
   
 }
 #login p {
