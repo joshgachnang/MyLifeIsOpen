@@ -1,12 +1,20 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/yui-base.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/post-bubble.css">
-    
-    
+    <link rel="stylesheet" type="text/css" href="/static/css/yui_base.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">    
     {% block head %}{% endblock %}
   </head>
+
+  <body>
+    {% include "userbar.html" %}
+    {% include "header.html" %}
+    <div id="content_block">
+      {% include "nav.html" %}
+      <div id="content">{% block content %}{% endblock %}</div>
+    </div>
+    {% include "sidebar.html" %}
+    {% include "footer.html" %}
 
   <!-- Google Analytics -->
   <script type="text/javascript">
@@ -23,13 +31,5 @@
 
   </script>
   <!-- /Google Analytics -->
-
-  <body>
-    {% include "userbar.html" %}
-    {% include "header.html" %}
-    {% include "nav.html" %}
-    <div id="content">{% block content %}{% endblock %}</div>
-    {% include "sidebar.html" %}
-    {% include "footer.html" %}
   </body>
 </html>

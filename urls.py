@@ -30,13 +30,9 @@ urlpatterns += patterns('webwork.views',
     (r'^home/(?P<page>\d+)/$', 'posts_page'),
     (r'^about/$', 'about'),
     (r'^new_post/$', 'new_post'),
-    (r'^post/(?P<id>\d+)/$', 'single_post'),
     (r'^like/(?P<post_id>\d+)/$', 'like_post'),
     (r'^dislike/(?P<post_id>\d+)/$', 'dislike_post'),
     (r'^comments/', include('django.contrib.comments.urls')),
     (r'^comments/(?P<post_id>\d+)/$', 'show_comments'),
-    (r'^comments/(?P<post_id>\d+)/new/$', 'new_comment'),
-    (r'^comments/like/(?P<post_id>\d+)/$', 'like_comment'),
-    (r'^comments/dislike/(?P<post_id>\d+)/$', 'dislike_comment'),
     # Sort by likes, geekiest, etc etc
 )

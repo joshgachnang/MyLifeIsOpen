@@ -6,7 +6,7 @@ from django.forms import ModelForm, Textarea
 
 
 class Post(models.Model):
-    content = models.CharField("How geeky is your life?", max_length=1000)
+    content = models.CharField("How geeky is your life?", max_length=256)
     owner = models.ForeignKey(User, blank=True, null=True)
     likes = models.IntegerField()
     dislikes = models.IntegerField()

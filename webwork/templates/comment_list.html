@@ -11,12 +11,15 @@
   <td class="like-dislike"><a href="/dislike/{{ post.id }}/">{{ dislike }}</a> ({{ post.dislikes }})</td>
 </table>
 {% render_comment_list for post %}
-{% get_comment_form for post as form %}
-<form action="{% comment_form_target %}" method="post">
-  {{ form }}
-  <tr>
-    <td></td>
-    <td><input type="submit" name="preview" class="submit-post" value="Preview"></td>
-  </tr>
+<form action="/comments/post/" method="post"><div style='display:none;'><input type='hidden' id='csrfmiddlewaretoken' name='csrfmiddlewaretoken' value='d20e9dc84c18e16a35c9d95868aa4052' /></div> 
+  <p><label type='hidden' style='display:none;' for="id_name">Name:</label> <input id="id_name" type="text" type='hidden' style='display:none;' name="name"style='display:none;' maxlength="50" /></p> 
+  <p><label for="id_email" type='hidden' style='display:none;'>Email address:</label> <input type='hidden' style='display:none;' type="text" name="email" id="id_email" /></p> 
+  <p><label for="id_url" type='hidden' style='display:none;'>URL:</label> <input type='hidden' style='display:none;' type="text" name="url" id="id_url" /></p> 
+  <p><label for="id_comment">Comment:</label> <textarea id="id_comment" rows="4" cols="40" name="comment"></textarea></p> 
+  <p><label for="id_honeypot" type='hidden' style='display:none;'>If you enter anything in this field your comment will be treated as spam:</label> <input type='hidden' style='display:none;' type="text" name="honeypot" id="id_honeypot" /><input type="hidden" name="content_type" value="webwork.post" id="id_content_type" /><input type="hidden" name="object_pk" value="14" id="id_object_pk" /><input type="hidden" name="timestamp" value="1286681764" id="id_timestamp" /><input type="hidden" name="security_hash" value="1c6d75555c48df8eadfbff569b8f249419eb4442" id="id_security_hash" /></p> 
+  <tr> 
+    <td></td> 
+    <td><input type="submit" name="submit" class="submit-post" value="Post"></td> 
+  </tr> 
 </form>
 {% endblock %}
