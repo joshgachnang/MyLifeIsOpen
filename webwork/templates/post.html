@@ -3,7 +3,7 @@
 {% load comments %}
 
 {% block content %}
-
+{% include "next_prev_bar.html" %}
 {% for post in posts %}
   {{ time }}
   {% get_comment_count for post as comment_count %}
@@ -15,4 +15,5 @@
     <td class="like-dislike"><a href="/like/{{ post.id }}/">{{ like }}</a> ({{ post.likes }})</td>
     <td class="like-dislike"><a href="/dislike/{{ post.id }}/">{{ dislike }}</a> ({{ post.dislikes }})</td>
   </table>{% endfor %}
+{% include "next_prev_bar.html" %}
 {% endblock %}
