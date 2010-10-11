@@ -12,7 +12,7 @@ def home(request):
     return HttpResponseRedirect('/home/1')
     
 def about(request):
-    return render_to_response('about.html', {'user': get_user(request)})
+    return render_to_response('about.html', {}, RequestContext(request))
     
 def posts_page(request, page):
     minimum = (int(page) - 1) * settings.POSTS_PER_PAGE
