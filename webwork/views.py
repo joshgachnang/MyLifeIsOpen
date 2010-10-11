@@ -16,13 +16,25 @@ def about(request):
     
 def posts_page(request, page):
     minimum = (int(page) - 1) * settings.POSTS_PER_PAGE
+    t = Post.objects.all().count()
+    if t <= settings.POSTS_PER_PAGE:
+	total_pages = 1
+    else:
+	total_pages = (t / settings.POSTS_PER_PAGE) + 1
     posts = Post.objects.order_by('-created')[minimum:minimum + settings.POSTS_PER_PAGE - 1]
     if len(posts) == 0:
-	if len(Post.objects.all()) != 0:
+	if total_pages != 0:
 	  return HttpResponseRedirect('/home/1')
 	else:
 	  return HttpResponseRedirect('/new_post/')
-    return render_to_response('post.html', {'posts': posts}, RequestContext(request))
+    if int(page) > total_pages:
+	return HttpResponseRedirect('/home/1')
+    prev = int(page) - 1
+    if int(page) == total_pages:
+	next = 0
+    else:
+	next = int(page) + 1
+    return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next}, RequestContext(request))
     
 def new_post(request):
     #Return form for new Post

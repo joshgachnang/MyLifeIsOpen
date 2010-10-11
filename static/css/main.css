@@ -45,7 +45,8 @@ is to other properties or values in creating the effect */
   margin-left: auto;
   margin-right: auto;
   position:relative;
-  padding:15px;
+  padding-top:5px; padding-bottom:5px;
+  padding-left:15px; padding-right:15px;
   /*margin:1em 0 3em;*/ 
   border:5px solid red;
   color:#333;
@@ -169,7 +170,7 @@ td.like-dislike {
   -moz-box-shadow: 5px 5px 5px #777; 
   box-shadow: 5px 5px 5px #777; 
   background: red;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
   margin-top: 5px;
 }
 #navbar li {
@@ -201,10 +202,10 @@ td.like-dislike {
   display: inline;
 }
 .next {
-  padding-left: 32%;
+  float: right;
 }
 .prev {
-  padding-right: 30%;
+  float: left;
 }
 #next_prev ul {
   padding-top: 3px;
