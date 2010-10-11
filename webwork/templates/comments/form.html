@@ -1,20 +1,26 @@
-{% extends "base.html" %}
-
-{% load comments %}
-
-{% block content %}
-
-{% get_comment_form for entry as form %}
-<!-- A context variable called form is created with the necessary hidden
-fields, timestamps and security hashes -->
-<table>
-  <form action="{% comment_form_target %}" method="post">
-    {{ form }}
-    <tr>
-      <td></td>
-      <td><input type="submit" name="preview" class="submit-post" value="Preview"></td>
-    </tr>
-  </form>
-</table>
-
-{% endblock %}
+{% load comments i18n %}
+{% if user.is_authenticated %}
+  <div id="comment_form"> 
+    <form action="{% comment_form_target %}" method="post">
+	  {% csrf_token %}
+	  {% if next %}<input name="next" type="hidden" value="{{ next }}" />{% endif %}
+	  {% for field in form %}
+	      {% if field.is_hidden %}
+		  {{ field }}
+	      {% else %}
+		  {% if field.name != "name" and field.name != "email" and field.name != "url" and field.name != "honeypot" %}
+		      {% if field.name == "comment" %}
+			<textarea id="id_comment" rows="5" cols="40" maxlength="256" name="comment" onKeyUp="toCount('id_comment','sBann','{CHAR} ',256);"></textarea> 
+		      {% else %}
+			{% if field.errors %}{{ field.errors }}{% endif %}
+			{{ field }}
+		      {% endif %}
+		  {% endif %}
+	      {% endif %}
+	  {% endfor %}
+	  <p><span id="sBann" class="char_count">256 </span><input class="submit-post" name="post" type="submit" value="{% trans "Add Comment" %}" /></p>
+    </form>
+  </div>
+{% else %}
+    I'm sorry, but you must be <a href="javascript:alert('send to login page')">logged in</a> to submit comments.
+{% endif %}

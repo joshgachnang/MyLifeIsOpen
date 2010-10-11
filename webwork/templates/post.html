@@ -11,7 +11,7 @@
     <p><span class="post_user">Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</span></p>
   </div>
   <table class="like-dislike">
-    <!--<td class="like-dislike"><a href="/comments/{{ post.id }}/">Comments</a> ({{ comment_count }})</td>-->
+    <td class="like-dislike"><a href="/comments/{{ post.id }}/">Comments</a> ({{ comment_count }})</td>
     <td class="like-dislike"><a href="/like/{{ post.id }}/">{{ like }}</a> ({{ post.likes }})</td>
     <td class="like-dislike"><a href="/dislike/{{ post.id }}/">{{ dislike }}</a> ({{ post.dislikes }})</td>
   </table>{% endfor %}

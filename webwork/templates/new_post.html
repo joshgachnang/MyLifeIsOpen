@@ -5,9 +5,11 @@
 {% endblock %}
 
 {% block content %}
-<form action="/new_post/" method="post">{% csrf_token %}</div> 
-    <p><label for="id_content">How geeky is your life?</label> <textarea id="id_content" name="content" maxlength="256" cols="40" rows="5" onKeyUp="toCount('id_content','sBann','{CHAR} characters left',256);"></textarea></p> 
-    <span id="sBann" class="minitext">256 characters left.</span>
-    <input type="submit" value="Submit" /> 
+<div id="comment_form">
+<form action="/new_post/" method="post">{% csrf_token %} 
+    <p><label for="id_content">How geeky is your life?</label></p>
+    <textarea id="id_content" name="content" maxlength="256" cols="40" rows="5" onKeyUp="toCount('id_content','sBann','{CHAR} ',256);"></textarea>
+    <p><span id="sBann" class="char_count">256 </span><input type="submit" value="Submit" /></p>
 </form> 
+</div>
 {% endblock %}

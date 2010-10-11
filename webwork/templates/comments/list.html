@@ -1,0 +1,7 @@
+<div class="comment_start"></div>
+{% for comment in comment_list %}
+   <div class="comment triangle-border">
+      {{ comment.comment }}
+      <p>Posted by: {{ comment.user }}</a> - {{ comment.submit_date.time }}</p>
+   </div>
+{% endfor %}

@@ -22,6 +22,7 @@ a:hover {
   clear: both;
 }
 /* Post/Comment */
+
 /* ------------------------------------------
 PURE CSS SPEECH BUBBLES
 by Nicolas Gallagher
@@ -99,6 +100,62 @@ td.like-dislike {
   -moz-box-shadow: 5px 5px 5px #777; 
   box-shadow: 5px 5px 5px #777; 
 }
+#comment_form {
+  margin-top: 10px;
+  width: 350px;
+  text-align: right;
+}
+
+.char_count {
+  font-size: 150%;
+  color: blue;
+}
+.comment {
+  margin-bottom: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  position:relative;
+  padding:15px;
+  /*margin:1em 0 3em;*/ 
+  border:2px solid blue	;
+  color:#333;
+  background:#fff;
+  
+  /* css3 */
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  -webkit-box-shadow: 5px 5px 5px #777;
+  -moz-box-shadow: 5px 5px 5px #777; 
+  box-shadow: 5px 5px 5px #777; 
+}
+
+/* creates the larger triangle */
+.comment:before {
+  content:"\00a0";
+  display:block; /* reduce the damage in FF3.0 */
+  position:absolute;
+  bottom:-30px; /* value = - border-top-width - border-bottom-width */
+  left:45px; /* controls horizontal position */
+  width:0;
+  height:0;
+  border:15px solid transparent;
+  border-top-color:blue;
+}
+
+/* creates the smaller  triangle */
+.comment:after {
+  content:"\00a0";
+  display:block; /* reduce the damage in FF3.0 */
+  position:absolute;
+  bottom:-25px; /* value = - border-top-width - border-bottom-width */
+  left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+  width:0;
+  height:0;
+  border:13px solid transparent;
+  border-top-color:#fff;
+}
 
 /* Navigation Bar */
 #navbar {
@@ -113,10 +170,14 @@ td.like-dislike {
   box-shadow: 5px 5px 5px #777; 
   background: red;
   margin-bottom: 10px;
+  margin-top: 5px;
 }
 #navbar li {
   display: inline;
+}
+#navbar ul {
   padding-top: 3px;
+  margin-top: 10px;
 }
 #nav a {
   text-decoration: underline;
