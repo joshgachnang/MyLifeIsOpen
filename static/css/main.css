@@ -165,7 +165,7 @@ td.like-dislike {
   -webkit-border-radius: 4em 1em 4em 1em;
   -khtml-border-radius:  4em 1em 4em 1em;
   -moz-border-radius: 4em 1em 4em 1em;
-  border-radius: .5em .5em .5em .5em;
+  border-radius: 4em 1em 4em 1em;
   -webkit-box-shadow: 5px 5px 5px #777;
   -moz-box-shadow: 5px 5px 5px #777; 
   box-shadow: 5px 5px 5px #777; 
@@ -187,9 +187,9 @@ td.like-dislike {
 #next_prev {
   height: 30px;
   width: 100%;
-  -webkit-border-radius: 4em 1em 4em 1em;
-  -khtml-border-radius:  4em 1em 4em 1em;
-  -moz-border-radius: 4em 1em 4em 1em;
+  -webkit-border-radius: .5em .5em .5em .5em;
+  -khtml-border-radius:  .5em .5em .5em .5em;
+  -moz-border-radius: .5em .5em .5em .5em;
   border-radius: .5em .5em .5em .5em;
   -webkit-box-shadow: 5px 5px 5px #777;
   -moz-box-shadow: 5px 5px 5px #777; 
@@ -260,9 +260,9 @@ td.like-dislike {
   padding-left: 25px;
   padding-bottom: 5px;
   background: red;
-  -webkit-border-radius: 4em 1em 4em 1em;
-  -khtml-border-radius:  4em 1em 4em 1em;
-  -moz-border-radius: 4em 0em 0em 0em;  
+  -webkit-border-radius: 0em 0em 0em 3em;
+  -khtml-border-radius:  0em 0em 0em 3em;
+  -moz-border-radius: 0em 0em 0em 3em;  
   border-radius: 0em 0em 0em 3em;
   -webkit-box-shadow: 5px 5px 5px #777;
   -moz-box-shadow: 5px 5px 5px #777; 
