@@ -2,7 +2,7 @@
 # Django settings for MyLifeIsOpen project.
 
 # Custom Tags
-POSTS_PER_PAGE = 25
+POSTS_PER_PAGE = 15
 AKISMET_API_KEY = 'your-key-here'
 
 # These will rename the like and dislike buttons on each post/comment.
