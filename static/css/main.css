@@ -101,6 +101,17 @@ td.like-dislike {
   -moz-box-shadow: 5px 5px 5px #777; 
   box-shadow: 5px 5px 5px #777; 
 }
+.post_table {
+  padding: 0px;
+  margin: 0px;
+  width: 85%%;
+}
+.post_table_right {
+  margin-top: -60px;
+  text-align: right; 
+  width: 15%;
+  float: right;
+}
 #comment_form {
   margin-top: 10px;
   width: 350px;
