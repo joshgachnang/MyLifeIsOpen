@@ -12,8 +12,23 @@
       <p><span class="post_user">Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</span></p>
     </div>
     <div class="post_table_right">
-      <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://mylifeisgeek.com/comments/{{ post.id }}/" data-text="{{ post.content }}" data-count="none" data-via="mylifeisgeek">Tweet</a>
-      <script src="http://www.stumbleupon.com/hostedbadge.php?s=4&r=http://mylifeisgeek.com/comments/{{ post.id }}/"></script>
+      <!-- AddThis Button BEGIN -->
+	<div class="addthis_toolbox addthis_default_style">
+	  <div id="like_buttons">
+	    <!-- http://www.communitymx.com/content/article.cfm?page=2&cid=27F87 -->
+	    <ul class="like_buttons">
+	      <li class="col1 coltopper"><a class="addthis_button_preferred_1"></a></li>
+	      <li class="col1"><a class="addthis_button_preferred_2"></a></li>
+	      <li class="col2 coltopper"><a class="addthis_button_preferred_3"></a></li>
+	      <li class="col2"><a class="addthis_button_facebook_like" fb:like:layout="button_count"></a></li>
+      	      <li class="col2"><a href="http://www.addthis.com/bookmark.php?v=250&amp;username=mylifeisgeek" onclick="addthis_open(this, '', '[URL]', '[TITLE]');addthis_close();return addthis_sendto()" class="more_share"><img src="http://s7.addthis.com/static/btn/sm-plus.gif" />More</a></li>
+	    </ul>
+	  </div>
+	  
+	</div>
+	<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=mylifeisgeek"></script>
+      <!-- AddThis Button END -->
     </div>
   </div>
   <table class="like-dislike">
@@ -21,6 +36,5 @@
     <td class="like-dislike"><a href="/like/{{ post.id }}/">{{ like }}</a> ({{ post.likes }})</td>
     <td class="like-dislike"><a href="/dislike/{{ post.id }}/">{{ dislike }}</a> ({{ post.dislikes }})</td>
   </table>{% endfor %}
-  <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 {% include "next_prev_bar.html" %}
 {% endblock %}

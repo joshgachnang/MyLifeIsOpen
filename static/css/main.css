@@ -104,14 +104,30 @@ td.like-dislike {
 .post_table {
   padding: 0px;
   margin: 0px;
-  width: 85%%;
+  width: 70%%;
 }
 .post_table_right {
   margin-top: -40px;
   text-align: right; 
-  width: 15%;
+  width: 30%;
   float: right;
 }
+#like_buttons ul {
+  float: left;
+  width: 10em;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+#like_buttons li {
+  float: left;
+  width: 2em;
+  margin:0px;
+  line-height: 1.3em;
+}
+.col1 {margin-left:3em;}
+.col2 {margin-left:5em;}
+.coltopper {margin-top:-6.5em;}
 #comment_form {
   margin-top: 10px;
   width: 350px;
