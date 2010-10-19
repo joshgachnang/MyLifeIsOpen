@@ -106,6 +106,9 @@ td.like-dislike {
   margin: 0px;
   width: 70%%;
 }
+.post_table a {
+  text-decoration: none; 
+}
 .post_table_right {
   margin-top: -80px;
   text-align: right; 

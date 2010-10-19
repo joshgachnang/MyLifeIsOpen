@@ -4,6 +4,9 @@
 
 {% block head %}
   <script type="text/javascript" src="/static/js/characterCount.js"></script>
+  <meta property="og:title" content="{{ post.content }}"/> 
+  <meta property="og:site_name" content="MLIGeek"/> 
+  <meta property="og:url" content="{{ site_url }}/comments/{{ post.id }}/" /> 
 {% endblock %}
 
 {% block content %}
