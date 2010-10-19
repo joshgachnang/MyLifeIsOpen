@@ -18,6 +18,7 @@ EMAIL_HOST_PASSWORD = 'yourpassword'
 EMAIL_PORT = 587
 
 SITE_TITLE = 'My Life Is Geek'
+SITE_URL = 'http://MyLifeIsGeek.com'
 
 GOOGLE_ANALYTICS_KEY='ua-0000000-0'
 

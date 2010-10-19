@@ -107,27 +107,23 @@ td.like-dislike {
   width: 70%%;
 }
 .post_table_right {
-  margin-top: -40px;
+  margin-top: -80px;
   text-align: right; 
   width: 30%;
   float: right;
 }
-#like_buttons ul {
-  float: left;
-  width: 10em;
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
+.tile a {
+  display: block;
+  padding: 10px;
+  border: 1px solid red;
+  margin-right: 5px;
+
 }
-#like_buttons li {
+.icon_tile li {
+  display: inline;
   float: left;
-  width: 2em;
-  margin:0px;
-  line-height: 1.3em;
+  margin-bottom: 5px;
 }
-.col1 {margin-left:3em;}
-.col2 {margin-left:5em;}
-.coltopper {margin-top:-6.5em;}
 #comment_form {
   margin-top: 10px;
   width: 350px;
