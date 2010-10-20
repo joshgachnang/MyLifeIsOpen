@@ -62,6 +62,11 @@ def show_comments(request, post_id):
     post = Post.objects.get(id=post_id)
     return render_to_response('comment_list.html', {'post': post, 'next': '/comments/' + str(post.id)}, RequestContext(request))
     
+def individual_post(request, post_id):
+    #Return list of comments, pass Post object
+    post = Post.objects.get(id=post_id)
+    return render_to_response('individual_post.html', {'post': post}, RequestContext(request))
+    
 def like_post(request, post_id):
     like_dislike(request, post_id, True)
     return HttpResponseRedirect('/') #Will use return value soon..
