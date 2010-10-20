@@ -3,9 +3,11 @@
 {% load comments %}
 
 {% block head %}
-  <meta property="og:title" content="FishSticks"/> 
+  <meta property="og:title" content="{{ post.content }}"/> 
   <meta property="og:site_name" content="MLIGeek"/> 
-  <meta property="og:url" content="{{ site_url }}/comments/{{ post.id }}/" /> 
+  <meta property="og:url" content="{{ site_url }}/post/{{ post.id }}/" /> 
+  <meta property="og:image" content="{{ site_url }}/static/img/logo.png" />
+  <meta property="og:type" content="article" />
   <title>{{ post.content }}</title>
 {% endblock %}
 
