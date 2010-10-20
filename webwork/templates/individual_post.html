@@ -3,17 +3,18 @@
 {% load comments %}
 
 {% block head %}
-  <meta property="og:title" content="{{ post.content }}"/> 
-  <meta property="og:site_name" content="MLIGeek"/> 
+  <meta property="og:title" content="{{ post.content }}" /> 
+  <meta property="og:type" content="article" />
   <meta property="og:url" content="{{ site_url }}/post/{{ post.id }}/" /> 
   <meta property="og:image" content="{{ site_url }}/static/img/logo.png" />
-  <meta property="og:type" content="article" />
-  <title>{{ post.content }}</title>
+  <meta property="og:site_name" content="MLIGeek" /> 
+  <meta name="description" content="{{ post.content }}" />
 {% endblock %}
+{% block title %}{{ post.content }}{% endblock %}
+
 
 {% block content %}
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-
 {% include "post_content.html" %}
 {% endblock %}

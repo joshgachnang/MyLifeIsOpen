@@ -4,13 +4,14 @@
 
 {% block head %}
   <script type="text/javascript" src="/static/js/characterCount.js"></script>
-  <meta property="og:title" content="{{ post.content }}"/> 
-  <meta property="og:site_name" content="MLIGeek"/> 
+  <meta property="og:title" content="{{ post.content }}" /> 
+  <meta property="og:type" content="article" />
   <meta property="og:url" content="{{ site_url }}/post/{{ post.id }}/" /> 
   <meta property="og:image" content="{{ site_url }}/static/img/logo.png" />
-  <meta property="og:type" content="article" />
-  <title>{{ post.content }}</title>
+  <meta property="og:site_name" content="MLIGeek" /> 
+  <meta name="description" content="{{ post.content }}" />
 {% endblock %}
+{% block title %}{{ post.content }}{% endblock %}
 
 {% block content %}
 <div id="fb-root"></div>
