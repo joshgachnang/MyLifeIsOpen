@@ -4,19 +4,13 @@
 
 {% block head %}
   <script type="text/javascript" src="/static/js/characterCount.js"></script>
-  <meta property="og:title" content="{{ post.content }}"/> 
+  <meta property="og:title" content="Peacock"/> 
   <meta property="og:site_name" content="MLIGeek"/> 
-  <meta property="og:url" content="{{ site_url }}/comments/{{ post.id }}/" /> 
+  <meta property="og:url" content="{{ site_url }}/post/{{ post.id }}/" /> 
 {% endblock %}
 
 {% block content %}
-<div class="triangle-border"><a name={{ post.id }}>{{ post.content }}</a>
-  <p><span class="post_user">Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</span></p>
-</div>
-<table class="like-dislike">
-  <td class="like-dislike"><a href="/like/{{ post.id }}/">{{ like }}</a> ({{ post.likes }})</td>
-  <td class="like-dislike"><a href="/dislike/{{ post.id }}/">{{ dislike }}</a> ({{ post.dislikes }})</td>
-</table>
+{% include "post_content.html" %}
 {% render_comment_list for post %}
 {% render_comment_form for post %}
 {% endblock %}
