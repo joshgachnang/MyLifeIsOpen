@@ -34,7 +34,7 @@ def posts_page(request, page):
 	next = 0
     else:
 	next = int(page) + 1
-    return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next}, RequestContext(request))
+    return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next, 'top_likes': getTopLikes(settings.TOP_LIKES), 'top_dislikes': getTopDislikes(settings.TOP_DISLIKES)}, RequestContext(request))
     
 def new_post(request):
     #Return form for new Post
@@ -91,3 +91,9 @@ def like_dislike(request, post_id, like):
     a = Access(ip=ip, post_access=post)
     a.save()
     return 0 #Need to modify to anchor
+
+def getTopLikes(num):
+    return Post.objects.order_by('-likes')[0:num]
+def getTopDislikes(num):
+    return Post.objects.all().order_by('dislikes')[0:num]
+  

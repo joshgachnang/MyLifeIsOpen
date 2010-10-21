@@ -19,7 +19,7 @@ class Post(models.Model):
 	  return self.owner.username + self.content[:15]
       
     class Meta:
-        ordering = ['-created']
+        ordering = ['-dislikes']
         
 class PostForm(ModelForm):
     content = models.TextField(max_length=1000)

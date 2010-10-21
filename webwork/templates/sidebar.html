@@ -1,5 +1,13 @@
 <div id="sidebar">
   <div id="box1">
+  <h3>Top Likes</h3>
+  {% for like in top_likes %}
+  <p>{{ like.content }} ({{ like.likes }})</p>
+  {% endfor %}
+  <h3>Top Dislikes</h3>
+  {% for dislike in top_dislikes %}
+  <p>{{ dislike.content }} ({{ dislike.likes }})</p>
+  {% endfor %}
   <script type="text/javascript"><!--
   google_ad_client = "pub-1879314568120827";
   /* 250x250, created 10/14/10 */
