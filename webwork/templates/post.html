@@ -1,42 +1,26 @@
 {% extends "base.html" %}
 
 {% load comments %}
+{% block head %}
+  <script type="text/javascript" src="/static/js/characterCount.js"></script>
+  <meta property="og:title" content="MLIGeek"/>  
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site_url }}" /> 
+  <meta property="og:image" content="{{ site_url }}/static/img/logo.png" />
+  <meta property="og:site_name" content="MLIGeek"/> 
+{% endblock %}
 
 {% block head %}
 <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 {% endblock %}
 
 {% block content %}
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+
 {% include "next_prev_bar.html" %}
 {% for post in posts %}
-  {% get_comment_count for post as comment_count %}
-  <div class="triangle-border post" >
-    <div class="post_table">
-      <p><a name={{ post.id }} href="{{ site_url }}/comments/{{ post.id }}/">{{ post.content }}</a></p>
-      <p><span class="post_user">Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</span></p>
-    </div>
-    <div class="post_table_right">
-      <!-- AddThis Button BEGIN -->
-	<div class="addthis_toolbox addthis_default_style" addthis:url="{{ site_url }}/post/{{ post.id }}/" addthis:title="{{ FishSticks }}">
-	    <!-- http://www.communitymx.com/content/article.cfm?page=2&cid=27F87 -->
-	    <ul class="icon_tile">
-	      <li><a id="fb" class="addthis_button_facebook tile addthis_32x32_style"></a></li>
-	      <li><a id="twitter" class="addthis_button_twitter tile addthis_32x32_style"></a></li>
-	      <li><a id="stumble" class="addthis_button_stumbleupon tile addthis_32x32_style"></a></li>
-	      <li><a id="email" class="addthis_button_email tile addthis_32x32_style"></a></li>
-	      <li><fb:like href="{{ site_url }}/post/{{ post.id }}/" font="arial" layout="button_count"></fb:like></li>
-      	      <li><a class="tile" href="http://www.addthis.com/bookmark.php?v=250&amp;username=mylifeisgeek" onclick="addthis_open(this, '', '[URL]', '[TITLE]');addthis_close();return addthis_sendto()" class="more_share"><img src="http://s7.addthis.com/static/btn/sm-plus.gif" />More</a></li>
-	    </ul>
-	</div>
-	<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
-	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=mylifeisgeek"></script>
-      <!-- AddThis Button END -->
-    </div>
-  </div>
-  <table class="like-dislike">
-    <td class="like-dislike"><a href="/comments/{{ post.id }}/">Comments</a> ({{ comment_count }})</td>
-    <td class="like-dislike"><a href="/like/{{ post.id }}/">{{ like }}</a> ({{ post.likes }})</td>
-    <td class="like-dislike"><a href="/dislike/{{ post.id }}/">{{ dislike }}</a> ({{ post.dislikes }})</td>
-  </table>{% endfor %}
+{% include "post_content.html" %}
+{% endfor %}
 {% include "next_prev_bar.html" %}
 {% endblock %}

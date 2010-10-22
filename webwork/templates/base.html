@@ -1,10 +1,11 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" >
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/yui_base.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/main.css">    
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
     {% block head %}{% endblock %}
-    <title>{% block title %}test{% endblock %}</title>
+    <title>{% block title %}{{ site_title }}{% endblock %}</title>
   </head>
 
   <body>

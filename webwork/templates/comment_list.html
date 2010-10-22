@@ -4,19 +4,20 @@
 
 {% block head %}
   <script type="text/javascript" src="/static/js/characterCount.js"></script>
-  <meta property="og:title" content="{{ post.content }}"/> 
-  <meta property="og:site_name" content="MLIGeek"/> 
-  <meta property="og:url" content="{{ site_url }}/comments/{{ post.id }}/" /> 
+  <meta property="og:title" content="{{ post.content }}" /> 
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{{ site_url }}/post/{{ post.id }}/" /> 
+  <meta property="og:image" content="{{ site_url }}/static/img/logo.png" />
+  <meta property="og:site_name" content="MLIGeek" /> 
+  <meta name="description" content="{{ post.content }}" />
 {% endblock %}
+{% block title %}{{ post.content }}{% endblock %}
 
 {% block content %}
-<div class="triangle-border"><a name={{ post.id }}>{{ post.content }}</a>
-  <p><span class="post_user">Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</span></p>
-</div>
-<table class="like-dislike">
-  <td class="like-dislike"><a href="/like/{{ post.id }}/">{{ like }}</a> ({{ post.likes }})</td>
-  <td class="like-dislike"><a href="/dislike/{{ post.id }}/">{{ dislike }}</a> ({{ post.dislikes }})</td>
-</table>
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+
+{% include "post_content.html" %}
 {% render_comment_list for post %}
 {% render_comment_form for post %}
 {% endblock %}
