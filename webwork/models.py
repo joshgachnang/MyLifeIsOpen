@@ -19,7 +19,7 @@ class Post(models.Model):
 	  return self.owner.username + self.content[:15]
       
     class Meta:
-        ordering = ['-dislikes']
+        ordering = ['-created']
         
 class PostForm(ModelForm):
     content = models.TextField(max_length=1000)
@@ -35,7 +35,15 @@ class Access(models.Model):
     
     def __unicode__(self):
       return self.ip
-    
+
+class ExtendedUser(models.Model):
+    first_name = models.CharField(blank=True)
+    last_name = models.CharField(blank=True)
+    total_likes = models.IntegerField(blank=True)
+    total_dislikes = models.IntegerField(blank=True)
+    avatar = models.URLField(blank=True)
+    user = models.ForeignKey(User)
+
 def on_comment_was_posted(sender, comment, request, *args, **kwargs):
     # spam checking can be enabled/disabled per the comment's target Model
     # if comment.content_type.model_class() != Entry:
