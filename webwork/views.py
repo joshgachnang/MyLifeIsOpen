@@ -95,5 +95,5 @@ def like_dislike(request, post_id, like):
 def getTopLikes(num):
     return Post.objects.order_by('-likes')[0:num]
 def getTopDislikes(num):
-    return Post.objects.all().order_by('dislikes')[0:num]
+    return Post.objects.all().order_by('-dislikes')[0:num]
   
