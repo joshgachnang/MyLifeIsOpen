@@ -11,10 +11,12 @@
   <body>
     {% include "userbar.html" %}
     {% include "header.html" %}
+    {% include "nav.html" %}
     <div id="content_block">
-      {% include "nav.html" %}
-      <div id="content">{% block content %}{% endblock %}</div>
-      {% include "footer.html" %}
+      <div id="content">{% block content %}{% endblock %}
+	{% include "next_prev_bar.html" %}
+      </div>
+    {% include "footer.html" %}
     </div>
     {% include "sidebar.html" %}
     

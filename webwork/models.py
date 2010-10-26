@@ -37,8 +37,9 @@ class Access(models.Model):
       return self.ip
 
 class ExtendedUser(models.Model):
-    first_name = models.CharField(blank=True)
-    last_name = models.CharField(blank=True)
+    first_name = models.CharField(blank=True, max_length=60)
+    last_name = models.CharField(blank=True, max_length=60)
+    bio = models.CharField(blank=True, max_length=1000)
     total_likes = models.IntegerField(blank=True)
     total_dislikes = models.IntegerField(blank=True)
     avatar = models.URLField(blank=True)

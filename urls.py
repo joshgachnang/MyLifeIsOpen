@@ -5,7 +5,6 @@ from django.views.generic.simple import direct_to_template
 from django.contrib.auth.views import password_reset, password_reset_done, password_change, password_change_done, logout
 from django.http import HttpResponsePermanentRedirect
 
-
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -26,13 +25,13 @@ urlpatterns = patterns('',
 	  {'document_root': settings.STATIC_DOC_ROOT}),
 )
 urlpatterns += patterns('webwork.views',
-    (r'^$', 'home'),
+    (r'^$', lambda request: HttpResponsePermanentRedirect('/home/1')),
     (r'^home/(?P<page>\d+)/$', 'posts_page'),
     (r'^about/$', 'about'),
     (r'^new_post/$', 'new_post'),
     (r'^post/(?P<post_id>\d+)/$', 'individual_post'),
-    (r'^like/(?P<post_id>\d+)/$', 'like_post'),
-    (r'^dislike/(?P<post_id>\d+)/$', 'dislike_post'),
+    (r'^like/(?P<post_id>\d+)/$', 'like_dislike_post', {'like': True}),
+    (r'^dislike/(?P<post_id>\d+)/$', 'like_dislike_post', {'like': False}),
     (r'^comments/', include('django.contrib.comments.urls')),
     (r'^comments/(?P<post_id>\d+)/$', 'show_comments'),
     # Sort by likes, geekiest, etc etc

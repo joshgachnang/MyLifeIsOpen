@@ -1,24 +1,23 @@
 <div id="sidebar">
   <div id="box1">
-  <h3>Top Likes</h3>
-  {% for like in top_likes %}
-  <p>{{ like.content }} ({{ like.likes }})</p>
-  {% endfor %}
-  <h3>Top Dislikes</h3>
-  {% for dislike in top_dislikes %}
-  <p>{{ dislike.content }} ({{ dislike.dislikes }})</p>
-  {% endfor %}
-  <script type="text/javascript"><!--
-  google_ad_client = "pub-1879314568120827";
-  /* 250x250, created 10/14/10 */
-  google_ad_slot = "6761729253";
-  google_ad_width = 250;
-  google_ad_height = 250;
-  //-->
-  </script>
-  <script type="text/javascript"
-  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-  </script>
+    
+    <div id="top_likes_dislikes">
+      <h3>Top Likes</h3>
+      <ul>
+      {% for like in top_likes %}
+      <li>{{ like.content }} ({{ like.likes }})</li>
+      {% endfor %}
+      </ul>
+    </div>
+    
+    <div id="top_likes_dislikes">
+      <h3>Top Dislikes</h3>
+      <ul>
+	{% for dislike in top_dislikes %}
+	<li>{{ dislike.content }} ({{ dislike.dislikes }})</li>
+	{% endfor %}
+      </ul>
+    </div>
   </div>
   <div id="box2">
   <script type="text/javascript"><!--
@@ -34,16 +33,5 @@
   </script>
   </div>
   <div id="box3">
-  <script type="text/javascript"><!--
-  google_ad_client = "pub-1879314568120827";
-  /* 250x250, created 10/14/10 */
-  google_ad_slot = "6761729253";
-  google_ad_width = 250;
-  google_ad_height = 250;
-  //-->
-  </script>
-  <script type="text/javascript"
-  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-  </script>
   </div>
 </div>

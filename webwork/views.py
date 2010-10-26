@@ -8,9 +8,6 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 import datetime
 
-def home(request):
-    return HttpResponseRedirect('/home/1')
-    
 def about(request):
     return render_to_response('about.html', {}, RequestContext(request))
     
@@ -66,16 +63,8 @@ def individual_post(request, post_id):
     #Return list of comments, pass Post object
     post = Post.objects.get(id=post_id)
     return render_to_response('individual_post.html', {'post': post}, RequestContext(request))
-    
-def like_post(request, post_id):
-    like_dislike(request, post_id, True)
-    return HttpResponseRedirect('/') #Will use return value soon..
-    
-def dislike_post(request, post_id):
-    like_dislike(request, post_id, False)
-    return HttpResponseRedirect('/') #Will use return value soon..
-    
-def like_dislike(request, post_id, like):
+       
+def like_dislike_post(request, post_id, like):
     accesses = Access.objects.filter(ip=request.META.get('REMOTE_ADDR'))
     if len(accesses) != 0:
         for access in accesses:
@@ -90,4 +79,4 @@ def like_dislike(request, post_id, like):
     ip = request.META.get('REMOTE_ADDR', '0.0.0.0')
     a = Access(ip=ip, post_access=post)
     a.save()
-    return 0 #Need to modify to anchor
+    return HttpResponseRedirect('/#' + str(post.id))

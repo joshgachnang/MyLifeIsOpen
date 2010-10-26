@@ -5,6 +5,9 @@
 POSTS_PER_PAGE = 15
 AKISMET_API_KEY = 'your-key-here'
 
+#Footer
+AUTHOR = 'Josh Gachnang'
+
 # These will rename the like and dislike buttons on each post/comment.
 RENAME_LIKE_DISLIKE = 'l33t', 'n00b'
 
