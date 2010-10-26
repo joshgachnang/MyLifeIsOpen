@@ -1,6 +1,12 @@
 {% ifnotequal prev next %}
 <div id="next_prev">
     {% ifnotequal prev 0 %}<a class="prev" href="/home/{{ prev }}">Previous Page</a>{% endifnotequal %}
+    <ul>
+    {% for page in page_list %}
+      <li><a href="/home/{{ page }}">{{ page }}</a>{% if not forloop.last %},{% endif %}</li>
+    {% endfor %}
+    </ul>
     {% ifnotequal next 0 %}<a class="next" href="/home/{{ next }}">Next Page</a>{% endifnotequal %}
+
 </div>
 {% endifnotequal %}

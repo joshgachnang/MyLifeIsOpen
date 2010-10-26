@@ -105,10 +105,15 @@ td.like-dislike {
   -moz-box-shadow: 5px 5px 5px #777; 
   box-shadow: 5px 5px 5px #000; 
 }
+.prepost {
+  white-space:normal; width: 40%;
+  color: yellow;
+}
 .post_table {
+  overflow: auto;
   padding: 0px;
   margin: 0px;
-  width: 65%%;
+  width: 65%;
 }
 .post_table a {
   text-decoration: none; 
@@ -228,9 +233,6 @@ td.like-dislike {
   margin-bottom: 10px;
   
 }
-#top_nav {
-  border-bottom: 1px solid black;
-}
 #next_prev li {
   display: inline;
 }
@@ -249,7 +251,9 @@ td.like-dislike {
 #next_prev a {
   text-decoration: underline;
 }
-
+#best_worse_bar {
+  margin-left: 50%;
+}
 /* ------------------------------------------------------------------------ */
 /* Bottom Navbar */
 /* ------------------------------------------------------------------------ */

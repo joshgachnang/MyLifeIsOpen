@@ -12,7 +12,8 @@ def about(request):
     return render_to_response('about.html', {}, RequestContext(request))
     
 def posts_page(request, page):
-    minimum = (int(page) - 1) * settings.POSTS_PER_PAGE
+    intpage = int(page)
+    minimum = (intpage - 1) * settings.POSTS_PER_PAGE
     t = Post.objects.all().count()
     if t <= settings.POSTS_PER_PAGE:
 	total_pages = 1
@@ -24,14 +25,25 @@ def posts_page(request, page):
 	  return HttpResponseRedirect('/home/1')
 	else:
 	  return HttpResponseRedirect('/new_post/')
-    if int(page) > total_pages:
+    if intpage > total_pages:
 	return HttpResponseRedirect('/home/1')
-    prev = int(page) - 1
-    if int(page) == total_pages:
+    prev = intpage - 1
+    if intpage == total_pages:
 	next_page = 0
     else:
-	next_page = int(page) + 1
-    return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next_page, }, RequestContext(request))
+	next_page = intpage + 1
+	
+    if total_pages == 1:
+	page_list = [1]
+    elif total_pages == 2:
+	page_list = [1,2]
+    elif intpage == total_pages:
+	page_list = (intpage- 4, intpage- 3, intpage- 2, intpage- 1, intpage)
+    elif total_pages - 1 == intpage:
+	page_list = (intpage- 3, intpage- 2, intpage- 1, intpage, intpage+ 1)
+    else:
+	page_list = (intpage- 2, intpage- 1, intpage, intpage+ 1, intpage+ 2)
+    return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next_page, 'last_page': total_pages, 'page_list': page_list}, RequestContext(request))
     
 def new_post(request):
     #Return form for new Post
