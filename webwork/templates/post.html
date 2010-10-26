@@ -14,8 +14,13 @@
 <div id="fb-root"></div>
 <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 
-{% include "next_prev_bar.html" %}
+<div id="top_nav">
+  {% include "next_prev_bar.html" %}
+</div>
 {% for post in posts %}
 {% include "post_content.html" %}
 {% endfor %}
+<div id="bottom_nav">
+  {% include "next_prev_bar.html" %}
+</div>
 {% endblock %}

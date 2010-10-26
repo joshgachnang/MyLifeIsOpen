@@ -13,12 +13,13 @@
     {% include "header.html" %}
     {% include "nav.html" %}
     <div id="content_block">
-      <div id="content">{% block content %}{% endblock %}
-	{% include "next_prev_bar.html" %}
+      <div id="content">
+	{% block content %}{% endblock %}
       </div>
     {% include "footer.html" %}
     </div>
     {% include "sidebar.html" %}
+    
     
   <!-- Google Analytics -->
   <script type="text/javascript">

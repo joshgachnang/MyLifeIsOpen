@@ -1,4 +1,5 @@
 /* Global */
+/* ------------------------------------------------------------------------ */
 a:link {
   text-decoration: none;
   color: black;
@@ -22,6 +23,7 @@ a:hover {
   clear: both;
 }
 /* Post/Comment */
+/* ------------------------------------------------------------------------ */
 
 /* ------------------------------------------
 PURE CSS SPEECH BUBBLES
@@ -186,7 +188,9 @@ td.like-dislike {
   border-top-color:#fff;
 }
 
+/* ------------------------------------------------------------------------ */
 /* Navigation Bar */
+/* ------------------------------------------------------------------------ */
 #navbar {
   height: 30px;
   width: 70%;
@@ -212,22 +216,31 @@ td.like-dislike {
 #nav a {
   text-decoration: underline;
 }
+
+/* ------------------------------------------------------------------------ */
 /* NextPrev Bar */
+/* ------------------------------------------------------------------------ */
+
 #next_prev {
-  height: 30px;
+  height: 20px;
   width: 100%;
   background: blue;
-  border-bottom: 1px solid black;
   margin-bottom: 10px;
+  
+}
+#top_nav {
+  border-bottom: 1px solid black;
 }
 #next_prev li {
   display: inline;
 }
 .next {
-  float: right;
+  position: absolute;
+  right: 5%;
 }
 .prev {
-  float: left;
+  position: absolute;
+  left: 5%;
 }
 #next_prev ul {
   padding-top: 3px;
@@ -237,7 +250,17 @@ td.like-dislike {
   text-decoration: underline;
 }
 
+/* ------------------------------------------------------------------------ */
+/* Bottom Navbar */
+/* ------------------------------------------------------------------------ */
+#bottom_nav {
+  height: 30px;
+  width: 100%;
+}
+
+/* ------------------------------------------------------------------------ */
 /* Header */
+/* ------------------------------------------------------------------------ */
 #header {
   color: red;
   width: 100%;
@@ -270,7 +293,10 @@ td.like-dislike {
   font-size: 75%;
 }
 
+/* ------------------------------------------------------------------------ */
 /* Sidebar */
+/* ------------------------------------------------------------------------ */
+
 #sidebar {
   float: right;
   width: 25%;
@@ -297,7 +323,10 @@ td.like-dislike {
   margin-left: 15px;
   border-bottom: 1px solid black;
 }
+
+/* ------------------------------------------------------------------------ */
 /* Userbar */
+/* ------------------------------------------------------------------------ */
 #login {
   position: absolute; top: 0px; right: 0px;
   float: right;
@@ -318,22 +347,36 @@ td.like-dislike {
   margin: 0px; 
 }
 
+/* ------------------------------------------------------------------------ */
 /* Footer */
+/* ------------------------------------------------------------------------ */
 #footer h6 {
   text-align: center;
   font-size: 60%;
   padding: 10px;
   margin-top: 10px;
-  
+  position: absolute;
+  bottom: 0px;
+  margin-left: 45%;
 } 
 
+/* ------------------------------------------------------------------------ */
 /* Content */
+/* ------------------------------------------------------------------------ */
 #content {
   width: 100%;
   float: left;
   margin: 0px;
   background: blue;
-  border: 1px solid black;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  -webkit-border-radius: 0em 0em 2em 2em;
+  -khtml-border-radius:  0em 0em 2em 2em;
+  -moz-border-radius: 0em 0em 2em 2em;
+  border-radius: 0em 0em 2em 2em;
+  position: relative;
+  padding-bottom: 30px;
 }
 #content_block {
   float:left;

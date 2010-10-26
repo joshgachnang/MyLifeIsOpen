@@ -28,10 +28,10 @@ def posts_page(request, page):
 	return HttpResponseRedirect('/home/1')
     prev = int(page) - 1
     if int(page) == total_pages:
-	next = 0
+	next_page = 0
     else:
-	next = int(page) + 1
-    return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next, }, RequestContext(request))
+	next_page = int(page) + 1
+    return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next_page, }, RequestContext(request))
     
 def new_post(request):
     #Return form for new Post

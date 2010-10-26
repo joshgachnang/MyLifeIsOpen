@@ -1,8 +1,6 @@
 {% ifnotequal prev next %}
 <div id="next_prev">
-  <ul> 
-    {% ifnotequal prev 0 %}<li><a class="prev" href="/home/1">Previous Page</a></li>{% endifnotequal %}
-    {% ifnotequal next 0 %}<li><a class="next" href="/home/2">Next Page</a></li>{% endifnotequal %}
-  </ul>
+    {% ifnotequal prev 0 %}<a class="prev" href="/home/{{ prev }}">Previous Page</a>{% endifnotequal %}
+    {% ifnotequal next 0 %}<a class="next" href="/home/{{ next }}">Next Page</a>{% endifnotequal %}
 </div>
 {% endifnotequal %}
