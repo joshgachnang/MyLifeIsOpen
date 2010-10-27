@@ -37,12 +37,18 @@ def posts_page(request, page):
 	page_list = [1]
     elif total_pages == 2:
 	page_list = [1,2]
+    elif total_pages == 3:
+	page_list = [1,2,3]
+    elif total_pages == 4:
+	page_list = [1,2,3,4]
+    elif intpage == 1 :
+	page_list = [1,2,3,4,5]
     elif intpage == total_pages:
-	page_list = (intpage- 4, intpage- 3, intpage- 2, intpage- 1, intpage)
+	page_list = (intpage - 4, intpage - 3, intpage - 2, intpage - 1, intpage)
     elif total_pages - 1 == intpage:
-	page_list = (intpage- 3, intpage- 2, intpage- 1, intpage, intpage+ 1)
+	page_list = (intpage - 3, intpage - 2, intpage - 1, intpage, intpage + 1)
     else:
-	page_list = (intpage- 2, intpage- 1, intpage, intpage+ 1, intpage+ 2)
+	page_list = (intpage - 2, intpage - 1, intpage, intpage + 1, intpage + 2)
     return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next_page, 'last_page': total_pages, 'page_list': page_list}, RequestContext(request))
     
 def new_post(request):

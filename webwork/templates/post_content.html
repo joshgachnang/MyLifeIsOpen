@@ -2,7 +2,7 @@
 {% get_comment_count for post as comment_count %}
   <div class="triangle-border post" >
     <div class="post_table">
-      <p><a name={{ post.id }} href="{{ site_url }}/comments/{{ post.id }}/"><pre class="prepost">{{ post.content }}</pre></a></p>
+      <p><a name={{ post.id }} href="{{ site_url }}/comments/{{ post.id }}/">{{ post.content }}</a></p>
       <p><span class="post_user">Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</span></p>
     </div>
     <div class="post_table_right">

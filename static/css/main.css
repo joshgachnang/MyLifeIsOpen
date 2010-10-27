@@ -44,8 +44,6 @@ explained what specific properties or values do and what their relationship
 is to other properties or values in creating the effect */
 
 .triangle-border {
-/*  margin-left: auto;
-  margin-right: auto;*/
   position:relative;
   padding-top:5px; padding-bottom:5px;
   padding-left:15px; padding-right:15px;
@@ -110,7 +108,6 @@ td.like-dislike {
   color: yellow;
 }
 .post_table {
-  overflow: auto;
   padding: 0px;
   margin: 0px;
   width: 65%;
@@ -149,12 +146,10 @@ td.like-dislike {
 .comment {
   margin-bottom: 20px;
   width: 80%;
-/*  margin-left: auto;
-  margin-right: auto;*/
   position:relative;
   padding:15px;
   /*margin:1em 0 3em;*/ 
-  border:2px solid blue	;
+  border:2px solid blue;
   color:#333;
   background:#fff;
   
@@ -209,7 +204,7 @@ td.like-dislike {
   margin-left: 15px;
   border-left: 1px solid black;
   border-right: 1px solid black;
-  border-top: 2px solid black;
+  border-top: 1px solid black;
 }
 #navbar li {
   display: inline;
@@ -231,35 +226,49 @@ td.like-dislike {
   width: 100%;
   background: blue;
   margin-bottom: 10px;
-  
+}
+#next_prev a:link {
+  text-decoration: none;
 }
 #next_prev li {
   display: inline;
+  border: 1px solid black;
+  background:red;
+  padding-left: 5px;
+  padding-right: 5px;
+  -webkit-border-radius: .5em .5em .5em .5em;
+  -khtml-border-radius:  .5em .5em .5em .5em;
+  -moz-border-radius: .5em .5em .5em .5em;
+  border-radius: .5em .5em .5em .5em;
+}
+#next_prev ul {
+  position: absolute;
+  left: 40%;
+  bottom: 30px;
 }
 .next {
   position: absolute;
   right: 5%;
+  bottom: 40px;
+  background:red;
+  padding: 5px;
+  border: 1px solid black;
+  -webkit-border-radius: .5em .5em .5em .5em;
+  -khtml-border-radius:  .5em .5em .5em .5em;
+  -moz-border-radius: .5em .5em .5em .5em;
+  border-radius: .5em .5em .5em .5em;
 }
 .prev {
   position: absolute;
   left: 5%;
-}
-#next_prev ul {
-  padding-top: 3px;
-  margin-top: 10px;
-}
-#next_prev a {
-  text-decoration: underline;
-}
-#best_worse_bar {
-  margin-left: 50%;
-}
-/* ------------------------------------------------------------------------ */
-/* Bottom Navbar */
-/* ------------------------------------------------------------------------ */
-#bottom_nav {
-  height: 30px;
-  width: 100%;
+  bottom: 40px;
+  background:red;
+  padding: 5px;
+  border: 1px solid black;
+  -webkit-border-radius: .5em .5em .5em .5em;
+  -khtml-border-radius:  .5em .5em .5em .5em;
+  -moz-border-radius: .5em .5em .5em .5em;
+  border-radius: .5em .5em .5em .5em;
 }
 
 /* ------------------------------------------------------------------------ */
