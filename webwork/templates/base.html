@@ -4,24 +4,37 @@
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css">
     <link rel="stylesheet" type="text/css" href="/static/css/yui_base.css">
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css"> 
     {% block head %}{% endblock %}
     <title>{% block title %}{{ site_title }}{% endblock %}</title>
   </head>
 
-  <body>
+<body>
+<div id="doc2" class="yui-t7"> 
+  <div id="hd" role="banner">
     {% include "userbar.html" %}
     {% include "header.html" %}
-    {% include "nav.html" %}
-    {% include "best_worst.html %}
-    <div id="content_block">
-      <div id="content">
-	{% block content %}{% endblock %}
-      </div>
-    {% include "footer.html" %}
+  </div> 
+  <div id="bd" role="main"> 
+    <div role="navigation" class="yui-g"> 
+      {% include "nav.html" %}
+      {% include "best_worst.html %}
     </div>
-    {% include "sidebar.html" %}
-    
-    
+    <div class="yui-ge"> 
+      <div role="application" class="yui-u first"> 
+	<div id="content_block">
+	  <div id="content">
+	    {% block content %}{% endblock %}
+	  </div>
+	</div> 
+      </div> 
+      <div class="yui-u"> 
+	{% include "footer.html" %}
+      </div> 
+    </div>
+  </div>
+</div> 
+
   <!-- Google Analytics -->
   <script type="text/javascript">
 

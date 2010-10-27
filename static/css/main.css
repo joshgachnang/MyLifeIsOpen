@@ -1,5 +1,17 @@
 /* Global */
 /* ------------------------------------------------------------------------ */
+
+/* Color Scheme */
+/* ------------------------------------------------------------------------ */
+/* Main 6e1513 */
+/* Purple 6E122F */
+/* Brown 6E3312 */
+/* Brighter Red C42522 */
+/* Grey 404040 */
+/* Black 000000 */
+/* Teal 126B6E */
+/* Green 3E6E12 */
+
 a:link {
   text-decoration: none;
   color: black;
@@ -97,6 +109,8 @@ td.like-dislike {
   font-size: 75%;
 }
 .post {
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin: 5px;
   width: 90%;
   -webkit-box-shadow: 5px 5px 5px #000;
@@ -187,7 +201,10 @@ td.like-dislike {
   border:13px solid transparent;
   border-top-color:#fff;
 }
-
+body {
+  background: #fd8a10;
+  height: 100%;
+}
 /* ------------------------------------------------------------------------ */
 /* Navigation Bar */
 /* ------------------------------------------------------------------------ */
@@ -199,7 +216,7 @@ td.like-dislike {
   -moz-border-radius: 4em 4em 0em 0em;
   border-radius: 4em 4em 0em 0em;
   vertical-align: bottom;
-  background: blue;
+  background: #fd8a10;
   padding-bottom: 5px;
   margin-left: 15px;
   border-left: 1px solid black;
@@ -208,13 +225,10 @@ td.like-dislike {
 }
 #navbar li {
   display: inline;
-}
-#navbar ul {
-  padding-top: 3px;
-  margin-top: 10px;
+  color: white;
 }
 #nav a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -313,7 +327,6 @@ td.like-dislike {
 #sidebar {
   float: right;
   width: 25%;
-  margin-top: 7px;
 }
 #top_likes_dislikes, #top_likes_dislikes {
   -webkit-border-radius: 1em 1em 1em 1em;
@@ -342,7 +355,6 @@ td.like-dislike {
 /* ------------------------------------------------------------------------ */
 #login {
   position: absolute; top: 0px; right: 0px;
-  float: right;
   padding-right: 15px;
   padding-left: 25px;
   padding-bottom: 12px;
@@ -380,7 +392,7 @@ td.like-dislike {
   width: 100%;
   float: left;
   margin: 0px;
-  background: blue;
+  background: #072d3c;
   border-top: 1px solid black;
   border-right: 1px solid black;
   border-left: 1px solid black;
