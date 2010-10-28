@@ -11,7 +11,6 @@
 /* Black 000000 */
 /* Teal 126B6E */
 /* Green 3E6E12 */
-
 a:link {
   text-decoration: none;
   color: black;
@@ -26,10 +25,6 @@ a:active {
 a:hover {
   text-decoration: underline;
   color: black;
-}
-#float a p {
-  margin: 0px;
-  padding: 0px;
 }
 .clear { 
   clear: both;
@@ -57,13 +52,10 @@ is to other properties or values in creating the effect */
 
 .triangle-border {
   position:relative;
-  padding-top:5px; padding-bottom:5px;
-  padding-left:15px; padding-right:15px;
   /*margin:1em 0 3em;*/ 
   border:5px solid red;
   color:#333;
   background:#fff;
-  
   /* css3 */
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
@@ -99,7 +91,6 @@ is to other properties or values in creating the effect */
   border-top-color:#fff;
 }
 table.like-dislike {
-  margin-left: 90px;
   border: 0px;
 }
 td.like-dislike {
@@ -109,46 +100,37 @@ td.like-dislike {
   font-size: 75%;
 }
 .post {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: 5px;
-  width: 90%;
+  position: relative;
+  padding-top: 25px;padding-bottom: 25px;
+  padding-left:15px;padding-right:15px;
   -webkit-box-shadow: 5px 5px 5px #000;
   -moz-box-shadow: 5px 5px 5px #777; 
   box-shadow: 5px 5px 5px #000; 
 }
 .prepost {
-  white-space:normal; width: 40%;
+  white-space:normal;
   color: yellow;
 }
 .post_table {
-  padding: 0px;
-  margin: 0px;
-  width: 65%;
+  width: 550px; 
 }
 .post_table a {
   text-decoration: none; 
 }
-.post_table_right {
-  margin-top: -80px;
-  text-align: right; 
-  width: 35%;
-  float: right;
+.post_table_right_top {
+  position: absolute;
+  right: 20px;
+  top: 5px;
 }
-.tile a {
-  display: block;
-  padding: 10px;
-  border: 1px solid red;
-  margin-right: 5px;
-
+.post_table_right_bottom {
+  position: absolute;
+  right: 23px;
+  top: 43px;
 }
 .icon_tile li {
   display: inline;
-  float: left;
-  margin-bottom: 5px;
 }
 #comment_form {
-  margin-top: 10px;
   width: 350px;
   text-align: right;
 }
@@ -158,8 +140,6 @@ td.like-dislike {
   color: blue;
 }
 .comment {
-  margin-bottom: 20px;
-  width: 80%;
   position:relative;
   padding:15px;
   /*margin:1em 0 3em;*/ 
@@ -201,69 +181,87 @@ td.like-dislike {
   border:13px solid transparent;
   border-top-color:#fff;
 }
-body {
-  background: #fd8a10;
-  height: 100%;
-}
 /* ------------------------------------------------------------------------ */
 /* Navigation Bar */
 /* ------------------------------------------------------------------------ */
+#head {
+  position: relative;
+  width: 100%;
+}
 #navbar {
-  height: 30px;
-  width: 70%;
-  -webkit-border-radius: 4em 4em 0em 0em;
-  -khtml-border-radius:  4em 4em 0em 0em;
-  -moz-border-radius: 4em 4em 0em 0em;
-  border-radius: 4em 4em 0em 0em;
+  width: 555px;
+  position: absolute;
+  left: 240px;
+  top: 10px;
+  height: 50px;
+  border:5px solid green;
+  color:#333;
+  background:#fff;
+  /* css3 */
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
+  -webkit-box-shadow: 5px 5px 5px #777;
+  -moz-box-shadow: 5px 5px 5px #777; 
+  box-shadow: 5px 5px 5px #777; 
+  
   vertical-align: bottom;
-  background: #fd8a10;
-  padding-bottom: 5px;
-  margin-left: 15px;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-top: 1px solid black;
+  margin-bottom: 15px;
 }
-#navbar li {
-  display: inline;
-  color: white;
-}
-#nav a {
+#navbar a {
+  position: absolute;
+  top: 10px;
   text-decoration: none;
+  font-size: 125%;
+  font-weight: bold;
 }
-
+#navbar p {
+  text-align: center;
+}
+#navbar_button {
+  border-right: 3px solid green;
+  float: left;
+  width: 108px;
+  height: 50px;
+  color: black;
+  vertical-align: middle;
+}
+.navbar_button_last {
+  border-right: none; 
+}
+#navbar_button:hover {
+  background: blue; 
+}
 /* ------------------------------------------------------------------------ */
 /* NextPrev Bar */
 /* ------------------------------------------------------------------------ */
 
 #next_prev {
-  height: 20px;
-  width: 100%;
   background: blue;
-  margin-bottom: 10px;
+  width: 100%;
+  position: relative;
 }
 #next_prev a:link {
   text-decoration: none;
+}
+#next_prev ul {
+  position: absolute;
+  left: 375px; 
+  top: 5px;
 }
 #next_prev li {
   display: inline;
   border: 1px solid black;
   background:red;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 5px;
   -webkit-border-radius: .5em .5em .5em .5em;
   -khtml-border-radius:  .5em .5em .5em .5em;
   -moz-border-radius: .5em .5em .5em .5em;
   border-radius: .5em .5em .5em .5em;
 }
-#next_prev ul {
-  position: absolute;
-  left: 40%;
-  bottom: 30px;
-}
 .next {
   position: absolute;
-  right: 5%;
-  bottom: 40px;
+  right: 20px;
   background:red;
   padding: 5px;
   border: 1px solid black;
@@ -274,8 +272,7 @@ body {
 }
 .prev {
   position: absolute;
-  left: 5%;
-  bottom: 40px;
+  left: 20px;
   background:red;
   padding: 5px;
   border: 1px solid black;
@@ -290,30 +287,19 @@ body {
 /* ------------------------------------------------------------------------ */
 #header {
   color: red;
-  width: 100%;
-  margin-bottom: 15px;
 }
-#header p {
-  margin: 0px;
-}
-#header h1 {
-  margin-bottom: 0px; 
-}
+
 #header br {
   line-height: 20%; 
 }
 #header img {
-  float: left;
   margin: 4px;
 }
 #geek {
   color: blue;
 }
 #tagline {
-  margin-left: 80px;
   font-size: 75%;
-  margin-top: 0px;
-  padding-top: 0px;
 }
 #stardate {
   color: black;
@@ -325,8 +311,6 @@ body {
 /* ------------------------------------------------------------------------ */
 
 #sidebar {
-  float: right;
-  width: 25%;
 }
 #top_likes_dislikes, #top_likes_dislikes {
   -webkit-border-radius: 1em 1em 1em 1em;
@@ -338,15 +322,11 @@ body {
   box-shadow: 5px 5px 5px #777; 
   background: red;
   padding: 4px;
-  margin-bottom: 15px;
-  margin-top: 0px;
 }
 #top_likes_dislikes ul li, #top_likes_dislikes ul li {
   font-size: 80%;
-  margin: 2px;
 }
 #top_likes_dislikes h3 {
-  margin-left: 15px;
   border-bottom: 1px solid black;
 }
 
@@ -368,30 +348,21 @@ body {
   box-shadow: 5px 5px 5px #777; 
   
 }
-#login p {
-  margin: 0px; 
-}
 
 /* ------------------------------------------------------------------------ */
 /* Footer */
 /* ------------------------------------------------------------------------ */
 #footer h6 {
+  margin-top: 50px;
   text-align: center;
   font-size: 60%;
   padding: 10px;
-  margin-top: 10px;
-  position: absolute;
-  bottom: 0px;
-  margin-left: 45%;
 } 
 
 /* ------------------------------------------------------------------------ */
 /* Content */
 /* ------------------------------------------------------------------------ */
 #content {
-  width: 100%;
-  float: left;
-  margin: 0px;
   background: #072d3c;
   border-top: 1px solid black;
   border-right: 1px solid black;
@@ -402,10 +373,4 @@ body {
   border-radius: 0em 0em 2em 2em;
   position: relative;
   padding-bottom: 30px;
-}
-#content_block {
-  float:left;
-  position:absolute;
-  width: 70%;
-  margin-left: 15px;
 }

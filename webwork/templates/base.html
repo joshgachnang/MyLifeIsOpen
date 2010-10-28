@@ -1,39 +1,49 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" >
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/yui_base.css">
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
     <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css"> 
+    <style type="text/css"> 
+      #custom-doc { width:76.77em;*width:74.92em;min-width:998px; margin:auto; text-align:left; } 
+      html {
+	background: #eee;
+	height: 100%; width:100%;
+      }
+    </style>
     {% block head %}{% endblock %}
     <title>{% block title %}{{ site_title }}{% endblock %}</title>
   </head>
 
 <body>
-<div id="doc2" class="yui-t7"> 
-  <div id="hd" role="banner">
+
+<div id="custom-doc" class="yui-t4 body">
+   <div id="hd" role="banner">
     {% include "userbar.html" %}
+    <div id="head">
     {% include "header.html" %}
+    {% include "nav.html" %}
+    </div>
+   </div>
+   <div id="bd" role="main">
+	<div id="yui-main">
+	<div class="yui-b"><div role="navigation" class="yui-g">
+	  
+	  {% include "best_worst.html %}
+	</div>
+  <div role="application" class="yui-g">
+    {% block content %}{% endblock %}
   </div> 
-  <div id="bd" role="main"> 
-    <div role="navigation" class="yui-g"> 
-      {% include "nav.html" %}
-      {% include "best_worst.html %}
+</div>
+	</div>
+	<div role="complementary" class="yui-b">
+	  {% include "sidebar.html" %}
+	</div>
+	
+	</div>
+    <div id="ft" role="contentinfo">
+      {% include "footer.html" %}
     </div>
-    <div class="yui-ge"> 
-      <div role="application" class="yui-u first"> 
-	<div id="content_block">
-	  <div id="content">
-	    {% block content %}{% endblock %}
-	  </div>
-	</div> 
-      </div> 
-      <div class="yui-u"> 
-	{% include "footer.html" %}
-      </div> 
-    </div>
-  </div>
-</div> 
+</div>
 
   <!-- Google Analytics -->
   <script type="text/javascript">
