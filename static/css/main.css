@@ -92,6 +92,9 @@ is to other properties or values in creating the effect */
 }
 table.like-dislike {
   border: 0px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  margin-left: 90px;
 }
 td.like-dislike {
   border: 0px;
@@ -189,48 +192,68 @@ td.like-dislike {
   width: 100%;
 }
 #navbar {
-  width: 555px;
+  width: 500px;
   position: absolute;
-  left: 240px;
-  top: 10px;
-  height: 50px;
-  border:5px solid green;
-  color:#333;
-  background:#fff;
+  left: 140px;
+  top: 70px;
+  height: 30px;
+  color: white;
+  
   /* css3 */
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
-  border-radius:10px;
-  -webkit-box-shadow: 5px 5px 5px #777;
-  -moz-box-shadow: 5px 5px 5px #777; 
-  box-shadow: 5px 5px 5px #777; 
-  
-  vertical-align: bottom;
+  border-radius:10px;  
   margin-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background: black;/* for non-css3 browsers */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#151515', endColorstr='#050505'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#151515), to(#050505)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #151515,  #050505); /* for firefox 3.6+ */
 }
 #navbar a {
-  position: absolute;
-  top: 10px;
   text-decoration: none;
-  font-size: 125%;
+  font-size: 12px;
   font-weight: bold;
+  color: white;
+  position: absolute;
+  top:0;
+  bottom:0;
+  display:table;
+  margin:auto;
+  text-align: center;
+  padding-left: 10px;
 }
 #navbar p {
   text-align: center;
 }
 #navbar_button {
-  border-right: 3px solid green;
+  position: relative;
+  background: red;
+  text-align: center;
+  -moz-border-radius:10px;
+  -webkit-border-radius:10px;
+  border-radius:10px;
   float: left;
-  width: 108px;
-  height: 50px;
-  color: black;
-  vertical-align: middle;
-}
-.navbar_button_last {
-  border-right: none; 
+  width: 90px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 30px;
+  background: #054573/* for non-css3 browsers */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#14b9ef', endColorstr='#054573'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(#14b9ef), to(#054573)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #14b9ef,  #054573); /* for firefox 3.6+ */
 }
 #navbar_button:hover {
   background: blue; 
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#054573', endColorstr='#054573'); /* for IE */
+  background: -webkit-gradient(linear, left top, left bottom, from(blue), to(#054573)); /* for webkit browsers */
+  background: -moz-linear-gradient(top,  #054573,  #054573); /* for firefox 3.6+ */
+  
 }
 /* ------------------------------------------------------------------------ */
 /* NextPrev Bar */
@@ -286,17 +309,35 @@ td.like-dislike {
 /* Header */
 /* ------------------------------------------------------------------------ */
 #header {
-  color: red;
-}
-
-#header br {
-  line-height: 20%; 
+  position: relative;
+  height: 140px;
 }
 #header img {
-  margin: 4px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
 }
-#geek {
+#header h1 {
+  position: absolute;
+  top: 5px;
+  left: 140px;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+#header p {
+  color: red;
+  position: absolute;
+  top: 35px;
+  left: 140px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+#site_name_emph {
   color: blue;
+}
+#site_name {
+  color: red;
 }
 #tagline {
   font-size: 75%;
@@ -322,9 +363,11 @@ td.like-dislike {
   box-shadow: 5px 5px 5px #777; 
   background: red;
   padding: 4px;
+  margin-bottom: 20px;
 }
 #top_likes_dislikes ul li, #top_likes_dislikes ul li {
   font-size: 80%;
+  margin-bottom: 5px;
 }
 #top_likes_dislikes h3 {
   border-bottom: 1px solid black;

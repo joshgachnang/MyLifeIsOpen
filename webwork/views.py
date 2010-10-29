@@ -49,7 +49,7 @@ def posts_page(request, page):
 	page_list = (intpage - 3, intpage - 2, intpage - 1, intpage, intpage + 1)
     else:
 	page_list = (intpage - 2, intpage - 1, intpage, intpage + 1, intpage + 2)
-    return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next_page, 'last_page': total_pages, 'page_list': page_list}, RequestContext(request))
+    return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next_page, 'last_page': total_pages, 'page_list': page_list, 'twitter_template': 'templates: { twitter: "{{url}}" }'}, RequestContext(request))
     
 def new_post(request):
     #Return form for new Post

@@ -20,4 +20,13 @@
 <div id="bottom_nav">
   {% include "next_prev_bar.html" %}
 </div>
+
+<script type="text/javascript">
+  var addthis_config = {"data_track_clickback":true};
+  var addthis_share = {
+    {{ twitter_template }} 
+  }
+</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=mylifeisgeek"></script>
+
 {% endblock %}
