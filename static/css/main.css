@@ -91,23 +91,30 @@ is to other properties or values in creating the effect */
   border-top-color:#fff;
 }
 table.like-dislike {
+  color: blue;
   border: 0px;
   margin-top: 15px;
   margin-bottom: 10px;
-  margin-left: 90px;
+  margin-left: 80px;
 }
-td.like-dislike {
-  border: 0px;
+.like-dislike a {
+  color: white;
+  margin-left: 10px;
 }
 .post_user {
   font-size: 75%;
+  position: absolute;
+  bottom: 5px;
+}
+.post_content {
+  font-size: 110%;
 }
 .post {
   position: relative;
   padding-top: 25px;padding-bottom: 25px;
   padding-left:15px;padding-right:15px;
   -webkit-box-shadow: 5px 5px 5px #000;
-  -moz-box-shadow: 5px 5px 5px #777; 
+  -moz-box-shadow: 5px 5px 5px #000; 
   box-shadow: 5px 5px 5px #000; 
 }
 .prepost {
@@ -136,6 +143,9 @@ td.like-dislike {
 #comment_form {
   width: 350px;
   text-align: right;
+}
+#comment_form p {
+  color: white;
 }
 
 .char_count {
@@ -264,6 +274,9 @@ td.like-dislike {
   width: 100%;
   position: relative;
 }
+#next_prev a {
+  color: white;	
+}
 #next_prev a:link {
   text-decoration: none;
 }
@@ -371,6 +384,9 @@ td.like-dislike {
 }
 #top_likes_dislikes h3 {
   border-bottom: 1px solid black;
+  font-size:110%;
+  font-weight: bold;
+  margin-bottom: 3px;
 }
 
 /* ------------------------------------------------------------------------ */

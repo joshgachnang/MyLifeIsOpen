@@ -81,7 +81,15 @@ def individual_post(request, post_id):
     #Return list of comments, pass Post object
     post = Post.objects.get(id=post_id)
     return render_to_response('individual_post.html', {'post': post}, RequestContext(request))
-       
+
+def best(request):
+    posts = Post.objects.order_by('-likes')[0:24]
+    return render_to_response('best_worst.html', {'posts': posts}, RequestContext(request))
+    
+def worst(request):
+    posts = Post.objects.order_by('-dislikes')[0:24]
+    return render_to_response('best_worst.html', {'posts': posts}, RequestContext(request))
+
 def like_dislike_post(request, post_id, like):
     accesses = Access.objects.filter(ip=request.META.get('REMOTE_ADDR'))
     if len(accesses) != 0:

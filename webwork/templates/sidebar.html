@@ -2,19 +2,19 @@
   <div id="box1">
     
     <div id="top_likes_dislikes">
-      <h3>Top Likes</h3>
+      <h3><a href="/best/">Top {{ like }} Posts</a></h3>
       <ul>
       {% for like in top_likes %}
-      <li><a href="home/{{ like.id }}/">{{ like.content }} ({{ like.likes }})</a></li>
+      <li><a href="/comments/{{ like.id }}/">{{ like.content }} ({{ like.likes }})</a></li>
       {% endfor %}
       </ul>
     </div>
     
     <div id="top_likes_dislikes">
-      <h3>Top Dislikes</h3>
+      <h3><a href="/worst/">Top {{ dislike }} Posts</a></h3>
       <ul>
 	{% for dislike in top_dislikes %}
-	<li><a href="home/{{ dislike.id }}/">{{ dislike.content }} ({{ dislike.dislikes }})</a></li>
+	<li><a href="/comments/{{ dislike.id }}/">{{ dislike.content }} ({{ dislike.dislikes }})</a></li>
 	{% endfor %}
       </ul>
     </div>

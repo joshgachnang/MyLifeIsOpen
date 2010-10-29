@@ -34,5 +34,7 @@ urlpatterns += patterns('webwork.views',
     (r'^dislike/(?P<post_id>\d+)/$', 'like_dislike_post', {'like': False}),
     (r'^comments/', include('django.contrib.comments.urls')),
     (r'^comments/(?P<post_id>\d+)/$', 'show_comments'),
+    (r'^best/$', 'best'),
+    (r'^worst/$', 'worst'),
     # Sort by likes, geekiest, etc etc
 )

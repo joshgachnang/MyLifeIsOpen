@@ -1,7 +1,29 @@
-<div id="best_worst_bar">
-  <ul id="nav"> 
-    <li><a href="/home/1">Geek Stories</a></li>
-    <li><a href="/new_post/">New Geeky Story</a></li>
-    <li><a href="/about">Who The Hell..</a></li>
-  </ul>
-</div>
+{% extends "base.html" %}
+
+{% load comments %}
+{% block head %}
+  <script type="text/javascript" src="/static/js/characterCount.js"></script>
+  <meta property="og:title" content="MLIGeek"/>  
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site_url }}" /> 
+  <meta property="og:image" content="{{ site_url }}/static/img/logo.png" />
+  <meta property="og:site_name" content="MLIGeek"/> 
+{% endblock %}
+
+{% block content %}
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+
+{% for post in posts %}
+{% include "post_content.html" %}
+{% endfor %}
+
+<script type="text/javascript">
+  var addthis_config = {"data_track_clickback":true};
+  var addthis_share = {
+    {{ twitter_template }} 
+  }
+</script>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=mylifeisgeek"></script>
+
+{% endblock %}
