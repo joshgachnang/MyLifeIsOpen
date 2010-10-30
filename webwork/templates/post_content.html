@@ -5,9 +5,11 @@
       <p><a name={{ post.id }} href="{{ site_url }}/comments/{{ post.id }}/"><span class="post_content">{{ post.content }}</span></a></p>
       <p><span class="post_user">Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</span></p>
     </div>
+    
+    <!-- AddThis Button BEGIN -->
     <div class="addthis_toolbox addthis_default_style" addthis:url="{{ site_url }}/post/{{ post.id }}/" addthis:title="{{ post.content }}">
     
-      <!-- AddThis Button BEGIN -->
+      
 	  <div class="post_table_right_top">
 	      <a id="fb" class="addthis_button_facebook tile addthis_32x32_style"></a>
 	      <a id="twitter" class="addthis_button_twitter tile addthis_32x32_style" addthis:url='{{ site_url }}/post/{{ post.id }}/' addthis:content="{{ post.content }}"></a>
