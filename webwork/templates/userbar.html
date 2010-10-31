@@ -1,4 +1,4 @@
-<div id="login">
+<div id="userbar">
 {% if user.is_authenticated %}
   <p>The current geek is: {{ user.username }}. <a href="{% url auth_logout %}"><u>Logout.</u></a></p>
 {% else %}

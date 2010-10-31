@@ -392,8 +392,7 @@ table.like-dislike {
 /* ------------------------------------------------------------------------ */
 /* Userbar */
 /* ------------------------------------------------------------------------ */
-#login {
-  position: absolute; top: 0px; right: 0px;
+#userbar {
   padding-right: 15px;
   padding-left: 25px;
   padding-bottom: 12px;
@@ -405,7 +404,9 @@ table.like-dislike {
   -webkit-box-shadow: 5px 5px 5px #777;
   -moz-box-shadow: 5px 5px 5px #777; 
   box-shadow: 5px 5px 5px #777; 
-  
+  position:absolute;
+  top:0px;right:0px;
+  z-index: 20;
 }
 
 /* ------------------------------------------------------------------------ */
