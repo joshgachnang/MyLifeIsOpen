@@ -95,7 +95,7 @@ def like_dislike_post(request, post_id, like):
     if len(accesses) != 0:
         for access in accesses:
 	    if access.post_access.id == int(post_id):
-	      return 1 #Need to modify to anchor
+	      return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/home/1')) #Need to modify to anchor
     post = Post.objects.get(id=post_id)
     if like == True:
       post.likes = post.likes + 1
