@@ -59,7 +59,7 @@ is to other properties or values in creating the effect */
   /* css3 */
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
-  border-radius:10px;
+  border-radius:10px 10px 10px 10px;
   -webkit-box-shadow: 5px 5px 5px #777;
   -moz-box-shadow: 5px 5px 5px #777; 
   box-shadow: 5px 5px 5px #777; 
@@ -163,7 +163,7 @@ table.like-dislike {
   /* css3 */
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
-  border-radius:10px;
+  border-radius:10px 10px 10px 10px;
   -webkit-box-shadow: 5px 5px 5px #777;
   -moz-box-shadow: 5px 5px 5px #777; 
   box-shadow: 5px 5px 5px #777; 
@@ -212,7 +212,7 @@ table.like-dislike {
   /* css3 */
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
-  border-radius:10px;  
+  border-radius:10px 10px 10px 10px;
   margin-bottom: 15px;
   padding-left: 20px;
   padding-right: 20px;
@@ -246,7 +246,7 @@ table.like-dislike {
   text-align: center;
   -moz-border-radius:10px;
   -webkit-border-radius:10px;
-  border-radius:10px;
+  border-radius:10px 10px 10px 10px;
   float: left;
   width: 90px;
   margin-left: 5px;
