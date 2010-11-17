@@ -1,0 +1,10 @@
+{% extends "mobile_base.html" %}
+{% load comments %}
+
+{% block content %}
+
+{% for post in posts %}
+  {% include "mobile_post_content.html" %}
+{% endfor %}
+
+{% endblock %}

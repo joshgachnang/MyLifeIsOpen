@@ -1,0 +1,30 @@
+<html>
+  <head>
+    {% block title %}My Life Is Geek{% endblock %}
+    {% block head %}{% endblock %}
+    <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css"> 
+  </head>
+  
+  <body>
+    <div id="doc" class="yui-t4">
+      <div id="hd" role="navigation">
+	{% block nav %}{% endblock %}
+      </div>
+      <div id="bd" role="main">
+	<div id="yui-main">
+	  <div class="yui-b">
+	    <div role="application" class="yui-g">
+	      {% block content %}{% endblock %}
+	    </div>
+	  </div>
+	</div>
+	<div role="complementary" class="yui-b">
+	  {% block sidebar %}{% endblock %}
+	</div>
+      </div>
+      <div id="ft" role="contentinfo">
+	{% block footer %}{% endblock %}
+      </div>
+    </div> 
+  </body>
+</html>

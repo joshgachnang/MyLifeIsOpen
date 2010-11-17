@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-
 {% load comments %}
+
 {% block head %}
   <script type="text/javascript" src="/static/js/characterCount.js"></script>
   <meta property="og:title" content="MLIGeek"/>  
@@ -15,7 +15,7 @@
 <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
 
 {% for post in posts %}
-{% include "post_content.html" %}
+  {% include "post_content.html" %}
 {% endfor %}
 <div id="bottom_nav">
   {% include "next_prev_bar.html" %}
