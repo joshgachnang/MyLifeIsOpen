@@ -8,8 +8,19 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 import datetime
 
+def short_render(req, *args, **kwargs):
+    kwargs['context_instance'] = RequestContext(req)
+    template = args[0]
+    template = 'mobile_' + template
+    print template
+    if req.is_mobile: 
+      return render_to_response(template, **kwargs)
+    else:
+      return render_to_response(*args, **kwargs)
+
 def about(request):
-    return render_to_response('about.html', {}, RequestContext(request))
+    return short_render(request, 'about.html')
+    #return render_to_response('about.html', {}, RequestContext(request))
     
 def posts_page(request, page):
     intpage = int(page)
@@ -49,6 +60,7 @@ def posts_page(request, page):
 	page_list = (intpage - 3, intpage - 2, intpage - 1, intpage, intpage + 1)
     else:
 	page_list = (intpage - 2, intpage - 1, intpage, intpage + 1, intpage + 2)
+    
     return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next_page, 'last_page': total_pages, 'page_list': page_list, 'twitter_template': 'templates: { twitter: "{{url}}" }'}, RequestContext(request))
     
 def new_post(request):

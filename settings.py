@@ -118,6 +118,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.http.ConditionalGetMiddleware',
     'django.middleware.gzip.GZipMiddleware',
+    'mobile_middleware.MobileDetectionMiddleware',
 )
 
 ROOT_URLCONF = 'urls'

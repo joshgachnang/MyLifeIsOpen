@@ -6,25 +6,18 @@
   </head>
   
   <body>
-    <div id="doc" class="yui-t4">
+    <div id="doc" class="yui-t7">
       <div id="hd" role="navigation">
-	{% block nav %}{% endblock %}
+	{% include "nav.html" %}
       </div>
       <div id="bd" role="main">
-	<div id="yui-main">
-	  <div class="yui-b">
-	    <div role="application" class="yui-g">
-	      {% block content %}{% endblock %}
-	    </div>
-	  </div>
-	</div>
-	<div role="complementary" class="yui-b">
-	  {% block sidebar %}{% endblock %}
+	<div class="yui-g">
+	  {% block content %}{% endblock %}
 	</div>
       </div>
       <div id="ft" role="contentinfo">
-	{% block footer %}{% endblock %}
+	{% include "footer.html" %}
       </div>
-    </div> 
+    </div>
   </body>
 </html>
