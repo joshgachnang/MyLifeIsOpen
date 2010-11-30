@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 MOBILE_USERAGENTS = ("2.0 MMP","240x320","400X240","AvantGo","BlackBerry",
     "Blazer","Cellphone","Danger","DoCoMo","Elaine/3.0","EudoraWeb",
     "Googlebot-Mobile","hiptop","IEMobile","KYOCERA/WX310K","LG/U990",
@@ -38,7 +39,7 @@ class MobileDetectionMiddleware(object):
 
         if request.META.has_key('HTTP_USER_AGENT'):
             user_agent = request.META['HTTP_USER_AGENT']
-	    
+	    print user_agent
             # Test common mobile values.
             pattern = "(up.browser|up.link|mmp|symbian|smartphone|midp|wap|phone|windows ce|pda|mobile|mini|palm|netfront)"
             prog = re.compile(pattern, re.IGNORECASE)
@@ -69,5 +70,4 @@ class MobileDetectionMiddleware(object):
                 test = user_agent[0:4].lower()
                 if test in user_agents_test:
                     is_mobile = True
-		
         request.is_mobile = is_mobile

@@ -1,16 +1,6 @@
+{% load comments %}
+
 {% get_comment_count for post as comment_count %}
-<div class="post">
-  <div class="post_left">
-    <p><a name={{ post.id }} href="{{ site_url }}/comments/{{ post.id }}/"><span class="post_content">{{ post.content }}</span></a></p>
-  </div>
-  <div class="post_user">
-    <p><span class="post_user">Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</span></p>
-  </div>
-</div>
-<div class="like_dislike">
-  <table class="like-dislike">
-    <td class="like-dislike"><a href="/comments/{{ post.id }}/">Comments</a> ({{ comment_count }})</td>
-    <td class="like-dislike"><a href="/like/{{ post.id }}/">{{ like }}</a> ({{ post.likes }})</td>
-    <td class="like-dislike"><a href="/dislike/{{ post.id }}/">{{ dislike }}</a> ({{ post.dislikes }})</td>
-  </table>
-</div>
+<h4><a name={{ post.id }} href="{{ site_url }}/comments/{{ post.id }}/"><span class="post_content">{{ post.content }}</span></a></h4>
+<p><span class="post_user">Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</span></p>
+<p>fddf<a href="/comments/{{ post.id }}/">a</a> : ({{ comment_count }}) <a href="/like/{{ post.id }}/">{{ like }}</a> ({{ post.likes }}) <a href="/dislike/{{ post.id }}/">{{ dislike }}</a> ({{ post.dislikes }})</p>

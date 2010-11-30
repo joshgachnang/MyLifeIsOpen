@@ -2,9 +2,21 @@
 {% load comments %}
 
 {% block content %}
-
+<ul data-role="listview" data-theme="c">
 {% for post in posts %}
+  <li href="/comments/{{ post.id }}/">
   {% include "mobile_post_content.html" %}
+  </li>
 {% endfor %}
+</ul>
 
+{% endblock %}
+
+{% block footer_nav %}
+<div data-role="navbar">
+  <ul>
+    <li><a href='/home/{{ prev }}'>Prev</a></li>
+    <li><a href='/home/{{ next }}'>Next</a></li>
+  </ul>
+</div>
 {% endblock %}

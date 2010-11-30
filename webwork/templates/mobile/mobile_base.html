@@ -1,23 +1,36 @@
+<!DOCTYPE html> 
 <html>
   <head>
     {% block title %}My Life Is Geek{% endblock %}
     {% block head %}{% endblock %}
-    <link rel="stylesheet" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css"> 
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.4.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
   </head>
   
   <body>
-    <div id="doc" class="yui-t7">
-      <div id="hd" role="navigation">
-	{% include "nav.html" %}
-      </div>
-      <div id="bd" role="main">
-	<div class="yui-g">
-	  {% block content %}{% endblock %}
+    <div data-role="page"> 
+      <div data-role="header">{% block header %}<h1>My Life Is Geek</h1>{% endblock %}
+	<div data-role="navbar">
+	  <ul>
+	    <li><a href="/home/" class="ui-btn-active">Home</a></li>
+	    <li><a href="/new_post/">New Post</a></li>
+	    <li><a href="/best/">Best</a></li>
+	    <li><a href="/worst/">Worst</a></li>
+	    <li><a href="/about/">About</a></li>
+	  </ul>
 	</div>
-      </div>
-      <div id="ft" role="contentinfo">
-	{% include "footer.html" %}
-      </div>
-    </div>
+      </div> 
+      <div data-role="content">
+	{% block content %}<p>Data</p>{% endblock %}
+      </div> 
+      <div data-role="footer">
+	{% block footer_nav %}{% endblock %}
+	<h5>Copyright 2010 Josh Gachnang</h5>
+      </div> 
+    </div> 
+    
+    
+    
   </body>
 </html>

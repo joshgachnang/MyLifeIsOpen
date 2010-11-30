@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div id="comment_form">
+<div id="comment_form" data-role="fieldcontain">
 <form action="/new_post/" method="post">{% csrf_token %} 
     <p><label for="id_content">How geeky is your life?</label></p>
     <textarea id="id_content" name="content" maxlength="256" cols="40" rows="5" onKeyUp="toCount('id_content','sBann','{CHAR} ',256);"></textarea>

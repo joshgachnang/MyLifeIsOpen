@@ -9,12 +9,19 @@ from django.template import RequestContext
 import datetime
 
 def short_render(req, *args, **kwargs):
+    print 'args'
+    for arg in args:
+      print arg
+    print kwargs
     kwargs['context_instance'] = RequestContext(req)
+    print 'here'
     template = args[0]
     template = 'mobile_' + template
-    print template
     if req.is_mobile: 
-      return render_to_response(template, **kwargs)
+      if len(args) > 1:
+	return render_to_response(template, args[1], **kwargs)
+      else:
+	return render_to_response(template, **kwargs)
     else:
       return render_to_response(*args, **kwargs)
 
@@ -23,6 +30,7 @@ def about(request):
     #return render_to_response('about.html', {}, RequestContext(request))
     
 def posts_page(request, page):
+
     intpage = int(page)
     minimum = (intpage - 1) * settings.POSTS_PER_PAGE
     t = Post.objects.all().count()
@@ -61,7 +69,7 @@ def posts_page(request, page):
     else:
 	page_list = (intpage - 2, intpage - 1, intpage, intpage + 1, intpage + 2)
     
-    return render_to_response('post.html', {'posts': posts, 'prev': prev, 'next': next_page, 'last_page': total_pages, 'page_list': page_list, 'twitter_template': 'templates: { twitter: "{{url}}" }'}, RequestContext(request))
+    return short_render(request, 'post.html', {'posts': posts, 'prev': prev, 'next': next_page, 'last_page': total_pages, 'page_list': page_list, 'twitter_template': 'templates: { twitter: "{{url}}" }'})
     
 def new_post(request):
     #Return form for new Post
