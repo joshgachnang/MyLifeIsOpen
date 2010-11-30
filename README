@@ -2,18 +2,14 @@ MyLifeIsOpen
 
 Released under the New BSD License
 
-MyLifeIsOpen is an easy way for professional photographers to host their 
-pictures online for their clients to review, comment on, ask for touch ups, 
-and order, all designed specifically for online proofing. Unlike other 
-projects (Gallery2/3, Coppermine, etc) OpenProofBook is designed specifically 
-for proofing. It comes with certain protections against stealing photos from 
-the proofing site, only gives users access to their own photos, and makes the 
-whole process streamlined.
-
+This project aims to give users an easy way to create sites like 
+TextsFromLastNight, My Life Is Average, F My Life, etc. Currently, it is
+very heavily based on the first site to use the framework: My Life Is Geek.
+Over the coming months, it will be generalized and abstracted from MLIG. 
 
 Django:
 
-This project relies on Django 1.2.0 for now.  We will be upgrading as
+This project relies on Django 1.2.* for now.  We will be upgrading as
 stable version are pushed out.
 
 Admin Site:
