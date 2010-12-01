@@ -108,6 +108,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.media",
     "django.contrib.messages.context_processors.messages",
     "context_processors.mlio_settings",
+    "mobile_template_processor.MobileTemplate",
 )
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',

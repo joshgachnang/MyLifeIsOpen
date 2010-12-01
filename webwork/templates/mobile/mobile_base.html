@@ -15,10 +15,10 @@
 	  <ul>
 	    <li><a rel="external" href="/home/1/" class="ui-btn-active">Home</a></li>
 	    <li><a rel="external" href="/new_post/">New Post</a></li>
-	    {% ifequal post.owner None %}
-	      <li><a rel="external" href="/accounts/login/">Login/Register!</a></li>
+	    {% ifequal request.user.username '' %}
+	      <li><a rel="external" href="/accounts/login/">Login/Register! </a></li>
 	    {% else %}
-	      <li><a rel="external" href="/accounts/logout/">Logout: {{ post.owner.username }}</a></li>
+	      <li><a rel="external" href="/accounts/logout/">Logout: {{ request.user.username }}</a></li>
 	    {% endifequal %}
 	    <li><a rel="external" href="/best/">Best</a></li>
 	    <li><a rel="external" href="/worst/">Worst</a></li>
