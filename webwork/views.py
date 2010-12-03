@@ -9,12 +9,7 @@ from django.template import RequestContext
 import datetime
 
 def short_render(req, *args, **kwargs):
-    print 'args'
-    for arg in args:
-      print arg
-    print kwargs
     kwargs['context_instance'] = RequestContext(req)
-    print 'here'
     template = args[0]
     template = 'mobile_' + template
     if req.is_mobile: 
