@@ -9,12 +9,7 @@ from django.template import RequestContext
 import datetime
 
 def short_render(req, *args, **kwargs):
-    print 'args'
-    for arg in args:
-      print arg
-    print kwargs
     kwargs['context_instance'] = RequestContext(req)
-    print 'here'
     template = args[0]
     template = 'mobile_' + template
     if req.is_mobile: 
@@ -89,26 +84,30 @@ def new_post(request):
 	return HttpResponseRedirect('/')
     else:
         form = PostForm()
-    return render_to_response('new_post.html', {'form': form}, RequestContext(request))
+    return short_render(request, 'new_post.html', {'form': form})
     
 @login_required
 def show_comments(request, post_id):
     #Return list of comments, pass Post object
     post = Post.objects.get(id=post_id)
-    return render_to_response('comment_list.html', {'post': post, 'next': '/comments/' + str(post.id)}, RequestContext(request))
+    return short_render(request, 'comment_list.html', {'post': post, 'next': '/comments/' + str(post.id)})
+    #return render_to_response('comment_list.html', {'post': post, 'next': '/comments/' + str(post.id)}, RequestContext(request))
     
 def individual_post(request, post_id):
     #Return list of comments, pass Post object
     post = Post.objects.get(id=post_id)
-    return render_to_response('individual_post.html', {'post': post}, RequestContext(request))
+    return short_render(request, 'individual_post.html', {'post': post})
+    #return render_to_response('individual_post.html', {'post': post}, RequestContext(request))
 
 def best(request):
     posts = Post.objects.order_by('-likes')[0:24]
-    return render_to_response('best_worst.html', {'posts': posts}, RequestContext(request))
+    return short_render(request, 'best_worst.html', {'posts': posts})
+    #return render_to_response('best_worst.html', {'posts': posts}, RequestContext(request))
     
 def worst(request):
     posts = Post.objects.order_by('-dislikes')[0:24]
-    return render_to_response('best_worst.html', {'posts': posts}, RequestContext(request))
+    return short_render(request, 'best_worst.html', {'posts': posts})
+    #return render_to_response('best_worst.html', {'posts': posts}, RequestContext(request))
 
 def like_dislike_post(request, post_id, like):
     accesses = Access.objects.filter(ip=request.META.get('REMOTE_ADDR'))

@@ -4,7 +4,7 @@
 {% block content %}
 <ul data-role="listview" data-theme="c">
 {% for post in posts %}
-  <li href="/comments/{{ post.id }}/">
+  <li>
   {% include "mobile_post_content.html" %}
   </li>
 {% endfor %}
@@ -15,8 +15,12 @@
 {% block footer_nav %}
 <div data-role="navbar">
   <ul>
-    <li><a href='/home/{{ prev }}'>Prev</a></li>
-    <li><a href='/home/{{ next }}'>Next</a></li>
+    {% ifnotequal prev 0 %}
+      <li><a rel="external" href='/home/{{ prev }}'>Prev</a></li>
+    {% endifnotequal %}
+    {% ifnotequal next 0 %}
+      <li><a rel="external" href='/home/{{ next }}'>Next</a></li>
+    {% endifnotequal %}
   </ul>
 </div>
 {% endblock %}
