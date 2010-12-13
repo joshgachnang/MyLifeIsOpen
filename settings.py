@@ -128,8 +128,8 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(dirname, 'webwork/templates'),
-    os.path.join(dirname, 'webwork/templates/mobile'),
     os.path.join(dirname, 'registration/templates'),
+    os.path.join(dirname, 'webwork/templates/mobile'),
 )
 
 INSTALLED_APPS = (
