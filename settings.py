@@ -21,7 +21,9 @@ EMAIL_HOST_PASSWORD = 'yourpassword'
 EMAIL_PORT = 587
 
 SITE_TITLE = 'My Life Is Geek'
-SITE_URL = 'http://MyLifeIsGeek.com'
+#Used to display stuff on Facebook
+SITE_SHORT_TITLE = 'MLIGeek'
+SITE_URL = 'MyLifeIsGeek.com'
 
 GOOGLE_ANALYTICS_KEY='ua-0000000-0'
 

@@ -3,17 +3,17 @@
 {% get_comment_count for post as comment_count %}
   <div class="triangle-border post" >
     <div class="post_table">
-      <p><a name={{ post.id }} href="{{ site_url }}/comments/{{ post.id }}/"><span class="post_content">{{ post.content }}</span></a></p>
+      <p><a name={{ post.id }} href="http://{{ site_url }}/comments/{{ post.id }}/"><span class="post_content">{{ post.content }}</span></a></p>
       <p><span class="post_user">Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</span></p>
     </div>
     
     <!-- AddThis Button BEGIN -->
-    <div class="addthis_toolbox addthis_default_style" addthis:url="{{ site_url }}/post/{{ post.id }}/" addthis:title="{{ post.content }}">
+    <div class="addthis_toolbox addthis_default_style" addthis:url="http://{{ site_url }}/post/{{ post.id }}/" addthis:title="{{ post.content }}">
       <div class="post_table_right_top">
 	<a class="addthis_counter addthis_pill_style"></a>
       </div>
       <div class="post_table_right_bottom">
-	<fb:like href="{{ site_url }}/post/{{ post.id }}/" layout="button_count" show_faces="false" font="verdana"></fb:like>
+	<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2F{{ site_url }}%2Fpost%2F{{ post.id }}&amp;layout=button_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
       </div>	
       <!-- AddThis Button END -->
     </div>

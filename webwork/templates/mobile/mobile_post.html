@@ -2,13 +2,10 @@
 {% load comments %}
 
 {% block content %}
-<ul data-role="listview" data-theme="c">
 {% for post in posts %}
-  <li>
   {% include "mobile_post_content.html" %}
-  </li>
 {% endfor %}
-</ul>
+
 
 {% endblock %}
 

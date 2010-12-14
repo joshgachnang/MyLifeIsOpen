@@ -4,3 +4,4 @@
 <h4><span class="post_content">{{ post.content }}</span></h4>
 <p><span class="post_user">Posted by: {% ifequal post.owner None %}Anon{% else %}{{ post.owner.username }}{% endifequal %}.</span></p>
 <p>Comments: ({{ comment_count }}) {{ like }} ({{ post.likes }}) {{ dislike }} ({{ post.dislikes }})</p>
+<hr />

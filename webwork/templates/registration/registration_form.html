@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form method="post" action="."> 
-  {{ form.as_p }}
- 
-  <input type="submit" value="Submit" /> 
-</form> 
+<div class="box">
+  <form method="post" action="."> 
+    {{ form.as_p }}
+  
+    <input type="submit" value="Submit" /> 
+  </form> 
+</div>
 {% endblock %}

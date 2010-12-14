@@ -3,17 +3,14 @@
 
 {% block head %}
   <script type="text/javascript" src="/static/js/characterCount.js"></script>
-  <meta property="og:title" content="MLIGeek"/>  
+  <meta property="og:title" content="{{ site_short_title }}"/>  
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ site_url }}" /> 
-  <meta property="og:image" content="{{ site_url }}/static/img/logo.png" />
-  <meta property="og:site_name" content="MLIGeek"/> 
+  <meta property="og:url" content="http://{{ site_url }}" /> 
+  <meta property="og:image" content="http://{{ site_url }}/static/img/logo.png" />
+  <meta property="og:site_name" content="{{ site_short_title }}"/> 
 {% endblock %}
 
 {% block content %}
-<div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
-
 {% for post in posts %}
   {% include "post_content.html" %}
 {% endfor %}
@@ -30,10 +27,3 @@
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=mylifeisgeek"></script>
 
 {% endblock %}
-
-<!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_default_style ">
-
-</div>
-<script type="text/javascript">var addthis_config = {"data_track_clickback":true};</script>
-<!-- AddThis Button END -->
