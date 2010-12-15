@@ -1,17 +1,23 @@
-<div id="navbar">
-  <div id="navbar_button">
-    <a href="/home/1"><p>Geek</p><p>Stories</p></a>
-  </div>
-  <div id="navbar_button">
-    <a href="/new_post/">Submit</a>
-  </div>
-  <div id="navbar_button">
-    <a href="/best/">Best</a>
-  </div>
-  <div id="navbar_button">
-    <p><a href="/worst/">Worst</a></p>
-  </div>
-  <div id="navbar_button" class="navbar_button_last">  
-    <a href="/about"><p>What The</p><p>Hell..</p></a>
-  </div>
+<div id="menu">
+  <ul id="nav">
+    <li><a href="/home/1">GeekStories</a>
+    </li>
+    <li><a href="/new_post/">Submit</a></li>
+    <li><a href="/best/">Best</a>
+    </li>
+    <li><a href="/worst/">Worst</a>
+    </li>
+    <li><a href="/about">What TheHell..</a>
+    </li>
+    {% ifequal request.user.username '' %}
+      <li><a href="/accounts/login/">Login/Register! </a>
+	<ul>
+	  <li><a href="/accounts/login"><span class="black no_shadow">Don't be a nameless geek!</span></a></li>
+	  <li><a href="/accounts/login">Login</a></li>
+	  <li><a href="/accounts/register">Register</a></li>
+	</ul>
+      </li>
+    {% else %}
+      <li><a rel="external" href="/accounts/logout/">Logout: {{ request.user.username }}</a></li>
+    {% endifequal %}
 </div>
