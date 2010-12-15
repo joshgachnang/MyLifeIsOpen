@@ -32,6 +32,9 @@ a:hover {
 .black {
   color: black; 
 }
+.white {
+  color: white; 
+}
 .underline {
   text-decoration: underline; 
 }
