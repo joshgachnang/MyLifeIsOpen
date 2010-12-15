@@ -1,11 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="box">
-  <form method="post" action=""> {% csrf_token %}
-    {{ form.as_p }}
+<div class="form_box"> 
+  <form method="post" action="">{% csrf_token %}
+    <h1>Registration for My Life Is Geek:</h1>
+    <label>
+      <span>Username:</span>
+      <input id="id_username" type="text" class="required" name="username" maxlength="30" />
+    </label>
+
+    <label>
+      <span>Email address:</span>
+      <input id="id_email" type="text" class="required" name="email" maxlength="75" />
+    </label>
+
+    <label>
+      <span>Password:</span>
+      <input id="id_password1" type="password" class="required" name="password1" />
+    </label>
+
+    <label>
+      <span>Password (again):</span>
+      <input id="id_password2" type="password" class="required" name="password2" />
+    </label>
   
-    <input type="submit" value="Submit" /> 
+    <input type="submit" class="button" value="Register!" /> 
   </form> 
-</div>
+</div> 
 {% endblock %}
