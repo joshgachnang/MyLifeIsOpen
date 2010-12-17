@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+{{ form }}
 <div class="form_box"> 
   <form method="post" action="">{% csrf_token %}
     <h1>Registration for My Life Is Geek:</h1>
@@ -9,7 +10,16 @@
       <span>Username:</span>
       <input id="id_username" type="text" class="required input_text" name="username" maxlength="30" />
     </label>
-
+    {% if non_field_errors %}
+    <label>
+      <span>Passwords didn't match. Try again</span>
+    </label>
+    {% endif %}
+    {% if field.errors %}
+    <label>
+      <span>{{ field.errors }}</span>
+    </label>
+    {% endif %}
     <label>
       <span>Email address:</span>
       <input id="id_email" type="text" class="required input_text" name="email" maxlength="75" />
