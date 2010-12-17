@@ -5,11 +5,19 @@
 {% endblock %}
 
 {% block content %}
-<div id="comment_form" data-role="fieldcontain">
+<div  class="form_box" data-role="fieldcontain">
 <form action="/new_post/" method="post">{% csrf_token %} 
-    <p><label for="id_content">How geeky is your life?</label></p>
-    <textarea id="id_content" name="content" maxlength="256" cols="40" rows="5" onKeyUp="toCount('id_content','sBann','{CHAR} ',256);"></textarea>
-    <p><span id="sBann" class="char_count">256 </span><input type="submit" value="Submit" /></p>
+    <label>
+      <h2 class="new_post">How geeky is your life?</h2>
+    </label>
+    <label>
+      <textarea class="message" id="id_content" name="content" maxlength="256" cols="40" rows="5" onKeyUp="toCount('id_content','sBann','{CHAR} ',256);"></textarea>
+      <p id="sBann" class="char_count new_post">256 </p>
+    </label> 
+    <label>
+      
+      <input type="submit" class="button" value="Submit" /> 
+    </label>
 </form> 
 </div>
 {% endblock %}

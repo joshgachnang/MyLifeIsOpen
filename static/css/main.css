@@ -162,7 +162,12 @@ table.like-dislike {
 
 .char_count {
   font-size: 150%;
-  color: blue;
+  color: red;
+}
+.char_count_post {
+  position: relative;
+  right: 5px;
+  margin-right: 10px;
 }
 .comment {
   position:relative;
@@ -494,6 +499,11 @@ ul#nav li:hover > ul li a:hover {
 /* ------------------------------------------------------------------------ */
 form,input,select,textarea{margin:0; padding:0; color:#ffffff;}
 
+textarea {
+  margin-left:20px;
+  padding:0; 
+  color:#ffffff;
+}
 div.form_box {
   margin:0 auto;
   width:500px;
@@ -543,14 +553,15 @@ div.form_box .input_text {
 
 div.form_box .message{
   padding:7px 7px;
-  width:350px;
+  margin-left:10px;
+  width:90%;
   background:#262626;
   border-bottom: 1px double #171717;
   border-top: 1px double #171717;
   border-left:1px double #333333;
   border-right:1px double #333333;
   overflow:hidden;
-  height:150px;
+  height:75px;
 }
 
 div.form_box .button
@@ -567,4 +578,12 @@ div.form_box .button
   border-top: 1px double #660000;
   border-left:1px double #FF0033;
   border-right:1px double #FF0033;
+}
+div.form_box h2 {
+  font-weight:bold;
+  font-size:125%;
+  color:white;
+}
+div.form_box .new_post {
+  margin-left:20px;
 }
