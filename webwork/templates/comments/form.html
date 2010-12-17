@@ -12,12 +12,14 @@
 	  {% if field.name != "name" and field.name != "email" and field.name != "url" and field.name != "honeypot" %}
 	    {% if field.name == "comment" %}
 	      <label>
-		<textarea  class="message" id="id_content" name="content" maxlength="256" cols="40" rows="5" onKeyUp="toCount('id_content','sBann','{CHAR} ',256);"></textarea>
+		<textarea  class="message" id="id_content" name="comment" maxlength="256" cols="40" rows="5" onKeyUp="toCount('id_content','sBann','{CHAR} ',256);"></textarea>
 		<p id="sBann" class="char_count new_post">256</p>
 	      </label>
 	    {% else %}
 	      {% if field.errors %}{{ field.errors }}{% endif %}
+	      <label>
 	      {{ field }}
+	      </label>
 	    {% endif %}
 	  {% endif %}
       {% endif %}
@@ -25,7 +27,7 @@
       <label>
 	<input type="submit" class="button" value="Add Comment" />  
       </label>
-      {% if next %}<input name="next" type="hidden" value="{{ next }}" />{% endif %}
+      <input name="next" type="hidden" value="/comments/{{ post.id }}" />
     </form>
   </div>
 {% else %}
