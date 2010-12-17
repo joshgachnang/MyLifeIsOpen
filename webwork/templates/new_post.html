@@ -5,13 +5,13 @@
 {% endblock %}
 
 {% block content %}
-<div  class="form_box" data-role="fieldcontain">
+<div class="form_box" data-role="fieldcontain">
 <form action="/new_post/" method="post">{% csrf_token %} 
     <label>
       <h2 class="new_post">How geeky is your life?</h2>
     </label>
     <label>
-      <textarea class="message" id="id_content" name="content" maxlength="256" cols="40" rows="5" onKeyUp="toCount('id_content','sBann','{CHAR} ',256);"></textarea>
+      <textarea  class="message" id="id_content" name="content" maxlength="256" cols="40" rows="5" onKeyUp="toCount('id_content','sBann','{CHAR} ',256);"></textarea>
       <p id="sBann" class="char_count new_post">256 </p>
     </label> 
     <label>

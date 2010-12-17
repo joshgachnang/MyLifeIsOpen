@@ -1,24 +1,31 @@
 {% load comments i18n %}
 {% if user.is_authenticated %}
-  <div id="comment_form"> 
-    <form action="{% comment_form_target %}" method="post">
-	  {% csrf_token %}
-	  {% if next %}<input name="next" type="hidden" value="{{ next }}" />{% endif %}
-	  {% for field in form %}
-	      {% if field.is_hidden %}
-		  {{ field }}
-	      {% else %}
-		  {% if field.name != "name" and field.name != "email" and field.name != "url" and field.name != "honeypot" %}
-		      {% if field.name == "comment" %}
-			<textarea id="id_comment" rows="5" cols="40" maxlength="256" name="comment" onKeyUp="toCount('id_comment','sBann','{CHAR} ',256);"></textarea> 
-		      {% else %}
-			{% if field.errors %}{{ field.errors }}{% endif %}
-			{{ field }}
-		      {% endif %}
-		  {% endif %}
-	      {% endif %}
-	  {% endfor %}
-	  <p><span id="sBann" class="char_count">256 </span><input class="submit-post" name="post" type="submit" value="{% trans "Add Comment" %}" /></p>
+  <div class="form_box"> 
+    <form action="{% comment_form_target %}" method="post">{% csrf_token %}
+      <label>
+	<h2 class="new_post">Add some input to this stream of output:</h2>
+      </label>
+      {% for field in form %}
+	{% if field.is_hidden %}
+	  {{ field }}
+	{% else %}
+	  {% if field.name != "name" and field.name != "email" and field.name != "url" and field.name != "honeypot" %}
+	    {% if field.name == "comment" %}
+	      <label>
+		<textarea  class="message" id="id_content" name="content" maxlength="256" cols="40" rows="5" onKeyUp="toCount('id_content','sBann','{CHAR} ',256);"></textarea>
+		<p id="sBann" class="char_count new_post">256</p>
+	      </label>
+	    {% else %}
+	      {% if field.errors %}{{ field.errors }}{% endif %}
+	      {{ field }}
+	    {% endif %}
+	  {% endif %}
+      {% endif %}
+      {% endfor %}
+      <label>
+	<input type="submit" class="button" value="Add Comment" />  
+      </label>
+      {% if next %}<input name="next" type="hidden" value="{{ next }}" />{% endif %}
     </form>
   </div>
 {% else %}

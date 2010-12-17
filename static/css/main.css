@@ -172,6 +172,7 @@ table.like-dislike {
 .comment {
   position:relative;
   padding:15px;
+  margin-bottom:30px;
   /*margin:1em 0 3em;*/ 
   border:2px solid blue;
   color:#333;
