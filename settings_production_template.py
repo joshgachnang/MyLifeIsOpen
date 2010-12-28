@@ -42,3 +42,5 @@ TIME_ZONE = 'America/Chicago'
 SECRET_KEY = 'idu7lmt&6y&em!*khslyb7s+xy*y6t34%8ml9(gk^f67*wl1dg'
 
 SEND_BROKEN_LINK_EMAILS = True
+
+MESSAGE_OF_THE_DAY = "Post your G33k New Years Resolutions!"

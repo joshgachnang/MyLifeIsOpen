@@ -44,6 +44,39 @@ class ExtendedUser(models.Model):
     total_dislikes = models.IntegerField(blank=True)
     avatar = models.URLField(blank=True)
     user = models.ForeignKey(User)
+    
+    def __unicode__(self):
+	return user.username
+    
+class SiteSettings(models.Model):
+    site_name = models.CharField(max_length=100)
+    site_title = models.CharField(blank=True, max_length=100)
+    site_short_title = models.CharField(blank=True, max_length=100)
+    num_top_likes = models.IntegerField()
+    num_top_dislikes = models.IntegerField()
+    rename_like = models.CharField(max_length=20)
+    rename_dislike = models.CharField(max_length=20)
+    author = models.CharField(max_length=100)
+
+    #Registration settings
+    account_activation_days = models.IntegerField()
+    email_host = models.CharField(max_length=100)
+    email_host_user = models.CharField(max_length=100)
+    email_host_password = models.CharField(max_length=128)
+    email_port = models.IntegerField()
+    
+    google_analytic_key = models.CharField(blank=True, max_length=64)
+    askismet_api_key = models.CharField(blank=True, max_length=64)
+    
+    #Amazon S3 settings
+    aws_access_key_id = models.CharField(blank=True, max_length=32)
+    aws_secret_access_key = models.CharField(blank=True, max_length=256)
+    aws_bucket_name = models.CharField(blank=True, max_length=256)
+
+    #Google Storage for Developers settings
+    google_storage_secret = models.CharField(blank=True, max_length=40)
+    google_storage_access_key = models.CharField(blank=True, max_length=20)
+    google_storage_bucket_name = models.CharField(blank=True, max_length=256)
 
 def on_comment_was_posted(sender, comment, request, *args, **kwargs):
     # spam checking can be enabled/disabled per the comment's target Model

@@ -368,6 +368,7 @@ ul#nav li:hover > ul li a:hover {
 #header {
   position: relative;
   height: 100px;
+  padding-bottom: 0px;
 }
 #header img {
   position: absolute;
@@ -389,12 +390,28 @@ ul#nav li:hover > ul li a:hover {
   position: absolute;
   top: 30px;
   left: 140px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 16px;
   text-shadow: 1px 1px 1px #000000;
 }
 #header a {
   text-decoration: none;
+}
+#header_message {
+  margin-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+  -webkit-border-radius: 1em 1em 1em 1em;
+  -khtml-border-radius:  1em 1em 1em 1em;
+  -moz-border-radius: 1em 1em 1em 1em;
+  -webkit-box-shadow: 5px 5px 5px #000;
+  -moz-box-shadow: 5px 5px 5px #000; 
+  box-shadow: 5px 5px 5px #000; 
+  border-radius: 1em 1em 1em 1em;
+  background: blue;
 }
 #site_name_emph {
   color: blue;

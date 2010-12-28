@@ -29,6 +29,9 @@ GOOGLE_ANALYTICS_KEY='ua-0000000-0'
 
 TOP_LIKES = 5
 TOP_DISLIKES = 3
+
+MESSAGE_OF_THE_DAY = "test test test test test test test"
+
 # Standard Settings
 import os
 dirname = os.path.dirname(globals()["__file__"])

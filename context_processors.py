@@ -15,5 +15,5 @@ def mlio_settings(request):
     'dislike': settings.RENAME_LIKE_DISLIKE[1], 'google_analytics_key': \
     settings.GOOGLE_ANALYTICS_KEY, 'site_title': settings.SITE_TITLE, 'site_short_title': settings.SITE_SHORT_TITLE, 'site_url': settings.SITE_URL, 'year': year, \
     'stardate': stardate, 'top_likes': getTopLikes(settings.TOP_LIKES), 'top_dislikes': getTopDislikes(settings.TOP_DISLIKES), \
-    'author': settings.AUTHOR,  }
+    'author': settings.AUTHOR, 'message': settings.MESSAGE_OF_THE_DAY }
     
