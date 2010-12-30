@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 # Create your views here.
 from django.shortcuts import render_to_response
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, HttpRequest
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, HttpRequest, HttpResponseBadRequest
 from django.conf import settings
+from django.utils import simplejson
 from models import Post, PostForm, Access
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
@@ -125,3 +126,46 @@ def like_dislike_post(request, post_id, like):
     a = Access(ip=ip, post_access=post)
     a.save()
     return HttpResponseRedirect('/#' + str(post.id))
+    
+#Ajax update like/dislike. Right now only works through Ajax and via GET. Returns JSON.
+def post_like(request):
+    
+    #Make sure request is following our Ajax and GET rules.
+    if not request.is_ajax():
+	return HttpResponseBadRequest
+    if not request.method == u'GET':
+	return HttpResponseBadRequest
+    
+    results = {'success':False}
+    GET = request.GET
+    if GET.has_key(u'post_id') and GET.has_key(u'like_dis'):
+	print "finished"
+	post_id = int(GET[u'post_id'])
+	
+	like = GET[u'like_dis']
+	post = Post.objects.get(id=post_id)
+	accesses = Access.objects.filter(ip=request.META.get('REMOTE_ADDR'))
+	#This should be handled via cookie..
+	if len(accesses) != 0:
+	    for access in accesses:
+		if access.post_access.id == int(post_id):
+		  #Change to return blank JSON, or same?
+		  json = simplejson.dumps(results)
+		  return HttpResponse(json, mimetype="application/json") #Need to modify to anchor
+	
+	if like == u"like":
+	    post.likes = post.likes + 1
+	elif like == u"dislike":
+	    post.dislikes = post.dislikes + 1
+	post.save()
+	results = {'success':True, 'likes':post.likes, 'dislikes':post.dislikes}
+	
+	#Save access
+	ip = request.META.get('REMOTE_ADDR', '0.0.0.0')
+	a = Access(ip=ip, post_access=post)
+	a.save()
+	
+    
+    json = simplejson.dumps(results)
+    
+    return HttpResponse(json, mimetype="application/json")

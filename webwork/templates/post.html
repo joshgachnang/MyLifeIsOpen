@@ -11,6 +11,19 @@
 {% endblock %}
 
 {% block content %}
+<script>
+function like(like_dislike, post) {
+  alert(post);
+  $.getJSON("/like/", { post_id:post, like_dis:like_dislike }, function(json){
+    alert("Was successful?: " + json['success']);
+  
+  var elem = 'post-' + post;
+  var newHtml = '<span id="apost-' + post + '">(' + json['likes'] + ')</span>';
+  alert(elem);
+  $(elem).reqlaceWith(newHtml);
+  });
+};
+</script>
 {% for post in posts %}
   {% include "post_content.html" %}
 {% endfor %}
