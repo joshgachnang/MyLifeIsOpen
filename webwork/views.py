@@ -139,7 +139,6 @@ def post_like(request):
     results = {'success':False}
     GET = request.GET
     if GET.has_key(u'post_id') and GET.has_key(u'like_dis'):
-	print "finished"
 	post_id = int(GET[u'post_id'])
 	
 	like = GET[u'like_dis']

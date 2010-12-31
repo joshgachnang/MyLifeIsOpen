@@ -13,13 +13,22 @@
 {% block content %}
 <script>
 function like(like_dislike, post) {
-  alert(post);
   $.getJSON("/like/", { post_id:post, like_dis:like_dislike }, function(json){
-    alert("Was successful?: " + json['success']);
+    var elem = '#post-' + post;
+    if (json['success'] == true) {
+      if (like_dislike == 'like') {
+	//Update number of likes, display change.
+	elem = elem + '-like';
+	var newNum = '(' + json['likes'] + ')';
+      }
+      else {
+	//Update number of dislikes, display change.
+	elem = elem + '-dislike';
+	var newNum = '(' + json['dislikes'] + ')';
+      }
+      $(elem).replaceWith(newNum);
+    }
   
-  var elem = '#post-' + post;
-  var newNum = '(' + json['likes'] + ')';
-  $(elem).replaceWith(newNum);
   });
 };
 </script>
