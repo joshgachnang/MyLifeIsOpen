@@ -1,10 +1,6 @@
-{% extends "base.html" %}
 
-{% block head %}
-  <script type="text/javascript" src="/static/js/characterCount.js"></script>
-{% endblock %}
+<script type="text/javascript" src="/static/js/characterCount.js"></script>
 
-{% block content %}
 <div class="form_box" data-role="fieldcontain">
 <form action="/new_post/" method="post">{% csrf_token %} 
     <label>
@@ -20,4 +16,3 @@
     </label>
 </form> 
 </div>
-{% endblock %}

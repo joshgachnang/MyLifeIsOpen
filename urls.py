@@ -24,7 +24,6 @@ urlpatterns = patterns('',
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
 	  {'document_root': settings.STATIC_DOC_ROOT}),
     (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '/static/img/favicon.ico'}),
-
 )
 urlpatterns += patterns('webwork.views',
     (r'^$', lambda request: HttpResponsePermanentRedirect('/home/1')),

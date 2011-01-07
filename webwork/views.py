@@ -87,7 +87,6 @@ def new_post(request):
         form = PostForm()
     return short_render(request, 'new_post.html', {'form': form})
     
-@login_required
 def show_comments(request, post_id):
     #Return list of comments, pass Post object
     post = Post.objects.get(id=post_id)

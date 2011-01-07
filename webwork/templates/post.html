@@ -13,6 +13,8 @@
 {% block content %}
 <script>
 function like(like_dislike, post) {
+  //Uses JQuery to send AJAX request to Django for updates.
+
   $.getJSON("/like/", { post_id:post, like_dis:like_dislike }, function(json){
     var elem = '#post-' + post;
     if (json['success'] == true) {

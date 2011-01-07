@@ -2,7 +2,7 @@
   <ul id="nav">
     <li><a href="/home/1">GeekStories</a>
     </li>
-    <li><a href="/new_post/">Submit</a></li>
+    <li><a href="/new_post/?height=280&width=500" title="New Post" class="thickbox">Submit</a></li>
     <li><a href="/best/">Best</a>
     </li>
     <li><a href="/worst/">Worst</a>
@@ -10,11 +10,11 @@
     <li><a href="/about">What The Hell..</a>
     </li>
     {% ifequal request.user.username '' %}
-      <li><a href="/accounts/login/">Login/Register! </a>
+      <li><a href="/accounts/login/?height=280&width=500" title="New Post" class="thickbox">Login/Register! </a>
 	<ul>
-	  <li><a href="/accounts/login"><span class="black no_shadow">Don't be a nameless geek!</span></a></li>
-	  <li><a href="/accounts/login">Login</a></li>
-	  <li><a href="/accounts/register">Register</a></li>
+	  <li><a href="/accounts/login?height=280&width=500" title="New Post" class="thickbox"><span class="black no_shadow">Don't be a nameless geek!</span></a></li>
+	  <li><a href="/accounts/login?height=280&width=500" title="New Post" class="thickbox">Login</a></li>
+	  <li><a href="/accounts/register?height=380&width=500" title="New Post" class="thickbox"">Register</a></li>
 	</ul>
       </li>
     {% else %}
