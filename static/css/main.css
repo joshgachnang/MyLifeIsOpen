@@ -514,6 +514,7 @@ ul#nav li:hover > ul li a:hover {
 
 /* ------------------------------------------------------------------------ */
 /* Forms */
+/* http://aceinfowayindia.com/blog/2009/06/how-create-good-looking-form-without-table/ */
 /* ------------------------------------------------------------------------ */
 form,input,select,textarea{margin:0; padding:0; color:#ffffff;}
 
@@ -526,8 +527,6 @@ div.form_box {
   margin:0 auto;
   width:500px;
   background:#222222;
-  position:relative;
-  top:50px;
   border:1px solid #262626;
 }
 
@@ -584,18 +583,25 @@ div.form_box .message{
 
 div.form_box .button
 {
-  margin:0 0 10px 0;
+  margin-bottom: 10px;
   padding:4px 7px;
   background:#CC0000;
   border:0px;
   position: relative;
   top:10px;
-  left:382px;
+  left:182px;
   width:100px;
   border-bottom: 1px double #660000;
   border-top: 1px double #660000;
   border-left:1px double #FF0033;
   border-right:1px double #FF0033;
+}
+div.form_box .count {
+  border:0px;
+  position: relative;
+  top:10px;
+  left:204px;
+  padding-bottom: 10px;
 }
 div.form_box h2 {
   font-weight:bold;
