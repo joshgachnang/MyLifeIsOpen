@@ -524,7 +524,8 @@ textarea {
   color:#ffffff;
 }
 div.form_box {
-  margin:0 auto;
+  margin:0;
+  padding:0;
   width:500px;
   background:#222222;
   border:1px solid #262626;
